@@ -5,6 +5,10 @@
 body{
     margin: 0;
     padding: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     color: rgba(0, 0, 0, .87);
     font-size: 16px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -52,7 +56,6 @@ body{
 
 .page-navbar-div{
     float: left;
-    /* clear: both; */
 }
 
 .page-header-image{
@@ -60,12 +63,12 @@ body{
 }
 
 .page-header-description{
-    font-size: 50px;
+    font-size: 1.5rem;
     font-style: oblique
 }
 
 .page-main-container{
-   margin-top: 50
+   /* margin-top: 50 */
     /* background-image:  no repeat center center  url('images/homeHead.jpg'); */
 }
 
@@ -77,9 +80,9 @@ body{
 .page-body-services-row2-column2-image{
     width: auto
 }
-.page-body-services{
+/* .page-body-services{
     
-}
+} */
 
 .page-body-services-row1-column1{
     margin: 2rem;
