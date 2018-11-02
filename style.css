@@ -60,7 +60,8 @@ body{
 }
 
 .page-header-description{
-    /* float: right; */
+    font-size: 50px;
+    font-style: oblique
 }
 
 .page-main-container{
