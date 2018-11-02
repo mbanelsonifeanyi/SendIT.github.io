@@ -1,19 +1,19 @@
 $(function() {
   google.maps.event.addDomListener(window, "load", function() {
     let fromPlaces = new google.maps.places.Autocomplete(
-      document.getElementById("from_places")
+      document.getElementById("fromPlaces")
     );
     let toPlaces = new google.maps.places.Autocomplete(
-      document.getElementById("to_places")
+      document.getElementById("toPlaces")
     );
 
-    google.maps.event.addListener(from_places, "place_changed", function() {
+    google.maps.event.addListener(from_places, "placeChanged", function() {
       let fromPlace = from_places.getPlace();
       let fromAddress = from_place.formatted_address;
       $("#origin").val(from_address);
     });
 
-    google.maps.event.addListener(to_places, "place_changed", function() {
+    google.maps.event.addListener(to_places, "placeChanged", function() {
       let toPlace = toPlaces.getPlace();
       let toAddress = toPlace.formatted_address;
       $("#destination").val(to_address);
@@ -54,15 +54,15 @@ $(function() {
         let distanceInMiles = distance.value / 1609.34;
         let durationText = duration.text;
         let durationValue = duration.value;
-        $("#in-mile").val(distanceInMiles.toFixed(2));
-        $("#in-kilo").text(distanceInKilometers.toFixed(2));
-        $("#duration_text").val(duration_text);
-        $("#duration_value").text(duration_value);
+        $("#inMiles").val(distanceInMiles.toFixed(2));
+        $("#inKilometers").text(distanceInKilometers.toFixed(2));
+        $("#durationText").val(duration_text);
+        $("#durationValue").text(duration_value);
       }
     }
   }
 
-  $("#distance_form").submit(function(e) {
+  $("#distanceForm").submit(function(e) {
     e.preventDefault();
     calculateDistance();
   });
