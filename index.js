@@ -1,5 +1,5 @@
-$(function() {
-  google.maps.event.addDomListener(window, "load", function() {
+$( () => {
+  google.maps.event.addDomListener(window, "load", () =>{
     let fromPlaces = new google.maps.places.Autocomplete(
       document.getElementById("fromPlaces")
     );
@@ -7,19 +7,19 @@ $(function() {
       document.getElementById("toPlaces")
     );
 
-    google.maps.event.addListener(from_places, "placeChanged", function() {
+    google.maps.event.addListener(from_places, "placeChanged", () => {
       let fromPlace = from_places.getPlace();
       let fromAddress = from_place.formatted_address;
       $("#origin").val(from_address);
     });
 
-    google.maps.event.addListener(to_places, "placeChanged", function() {
+    google.maps.event.addListener(to_places, "placeChanged", () => {
       let toPlace = toPlaces.getPlace();
       let toAddress = toPlace.formatted_address;
       $("#destination").val(to_address);
     });
   });
-  function calculateDistance() {
+   calculateDistance = () => {
     let origin = $("#origin").val();
     let destination = $("#destination").val();
     console.log("origin and destination ", origin, destination);
@@ -37,7 +37,7 @@ $(function() {
     );
   }
 
-  function callback(response, status) {
+   callback = (response, status) => {
     if (status !== google.maps.DistanceMatrixStatus.OK) {
       $("#result").html(err);
     } else {
@@ -62,7 +62,7 @@ $(function() {
     }
   }
 
-  $("#distanceForm").submit(function(e) {
+  $("#distanceForm").submit( (e) => {
     e.preventDefault();
     calculateDistance();
   });
