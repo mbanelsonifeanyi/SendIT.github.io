@@ -77,12 +77,17 @@ body{
 
 }
 
+.pae-body-services{
+
+}
+
 .page-body-services-row2-column2-image{
     width: auto
 }
-/* .page-body-services{
-    
-} */
+ .page-body-services{
+    display: grid;
+    grid-template-columns: 3.33fr 3.33fr 
+} 
 
 .page-body-services-row1-column1{
     margin: 2rem;

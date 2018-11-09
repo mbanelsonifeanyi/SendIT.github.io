@@ -8,12 +8,12 @@ $( () => {
     );
 
     google.maps.event.addListener(from_places, "placeChanged", () => {
-      let fromPlace = from_places.getPlace();
-      let fromAddress = from_place.formatted_address;
-      $("#origin").val(from_address);
+      let fromPlace = fromPlaces.getPlace();
+      let fromAddress = fromPlace.formattedAddress;
+      $("#origin").val(fromAddress);
     });
 
-    google.maps.event.addListener(to_places, "placeChanged", () => {
+    google.maps.event.addListener(toPlaces, "placeChanged", () => {
       let toPlace = toPlaces.getPlace();
       let toAddress = toPlace.formatted_address;
       $("#destination").val(to_address);

@@ -1,0 +1,40 @@
+{
+  "name": "mbanelsonifeanyi.github.io",
+  "version": "1.0.0",
+  "description": "SendIT on gh-pages.",
+  "main": "index.js",
+  "bin": {
+    "mbanelsonifeanyi.github.io": "dev.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/dev",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && mkdir dist && @babel server -s -d dist",
+    "production": "npm run build && node bin/production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbanelsonifeanyi/mbanelsonifeanyi.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbanelsonifeanyi/mbanelsonifeanyi.github.io/issues"
+  },
+  "homepage": "https://github.com/mbanelsonifeanyi/mbanelsonifeanyi.github.io#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.52",
+    "@babel/core": "^7.0.0-beta.52",
+    "@babel/node": "^7.0.0-beta.52",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.52",
+    "@babel/polyfill": "^7.0.0-beta.52",
+    "@babel/preset-env": "^7.0.0-beta.52",
+    "@babel/preset-flow": "^7.0.0-beta.52",
+    "@babel/register": "^7.0.0-beta.52"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
