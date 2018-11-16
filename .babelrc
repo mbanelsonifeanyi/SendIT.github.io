@@ -1,18 +1,5 @@
-
 {
   "presets": [
-    "@babel/preset-flow",
-    [
-      "@babel/preset-env",
-      {
-        "debug": true,
-        "useBuiltIns": "usage",
-        "shippedProposals": true,
-        "targets": {
-          "node": "8.10"
-        }
-      }
-    ]
-  , "es2015" ],
-  "plugins": ["@babel/plugin-proposal-class-properties"]
+    "es2015"
+  ]
 }
