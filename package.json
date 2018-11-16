@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "nyc mocha server/test --require babel-register",
-    "start": "nodemon server/app.js --exec babel-node"
+    "start": "node bin/dev"
   },
   "repository": {
     "type": "git",
