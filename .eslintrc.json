@@ -1,7 +1,6 @@
 {
   "root": true,
   "env": {
-    "amd": true,
     "es6": true
   },
   "globals": {
@@ -9,15 +8,16 @@
     "asyncDefine": true
   },
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2015,
     "ecmaFeatures": {
-      "impliedStrict": true
+      "impliedStrict": true,
+      "experimentalObjectRestSpread ": true
     }
   },
   "extends": [
-    "airbnb-base"
+    "airbnb-base",
+    "eslint:recommended"
   ],
-  "parser": "babel-eslint",
   "rules": {
     "for-direction": "error",
     "getter-return": "error",
@@ -28,22 +28,18 @@
       }
     ],
     "import/no-extraneous-dependencies": "off",
-    "no-constant-condition": [
-      "off",
-      {
-        "checkLoops": false
-      }
-    ],
     "no-extra-parens": "off",
     "no-param-reassign": "warn",
     "accessor-pairs": "error",
-    "array-callback-return": "error",
+    "array-callback-return": "warn",
     "class-methods-use-this": "error",
     "complexity": [
       "error",
       20
     ],
-    "consistent-return": "warn",
+    "max-len": [2, 140, 4, {"ignoreComments": true, "ignoreUrls": true}],
+    "no-unused-expressions": [2, { "allowShortCircuit": true, "allowTernary": true }],
+    "consistent-return": "off",
     "curly": "error",
     "default-case": "error",
     "dot-location": [
@@ -59,6 +55,7 @@
         "allowParens": true
       }
     ],
+    "no-console": "warn",
     "no-div-regex": "error",
     "no-else-return": "error",
     "no-eq-null": "error",
@@ -87,7 +84,6 @@
     "no-sequences": "error",
     "no-throw-literal": "error",
     "no-unmodified-loop-condition": "error",
-    "no-unused-expressions": "error",
     "no-useless-call": "error",
     "no-useless-concat": "error",
     "no-useless-return": "error",
@@ -135,17 +131,8 @@
       "error",
       5
     ],
-    "max-len": [
-      "error",
-      120,
-      {
-        "ignoreComments": true,
-        "ignoreUrls": true,
-        "ignoreStrings": true
-      }
-    ],
     "max-statements": "off",
-    "max-statements-per-line": "error",
+    "max-statements-per-line": "warn",
     "new-cap": [
       "error",
       {

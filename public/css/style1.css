@@ -48,22 +48,21 @@ body{
 }
 .page-main-container{
     padding: 0 15px;
-    min-width: 90%;
-    min-height: calc( 100vh - 190px );
-    background-image: url(../images/rsz_homehead.jpg);
-    background-size: auto;
+    max-width: 90%;
+    max-height: calc( 100vh - 190px );
     background-repeat: no-repeat;
+    position: fixed;
 }
 .page-footer{
     color: rgba(247, 173, 14);
-    bottom: 0; 
+    bottom: 0;
     position: absolute;
     background-color: rgba(0, 0, 0, .87);
     text-align: center;
     overflow: hidden;
 }
 .page-main-container #page-header-image {
-    width: auto
+    width: auto;
 }
 .page-body-signup-form-div{
     background-color:   rgba(78, 77, 77, 0.875);
@@ -75,7 +74,9 @@ body{
 .page-main-container-dashboard{
     background-color: black;
     display: grid;
-    grid-template-columns: 3fr 8fr
+    grid-template-columns: 3fr 8fr;
+    /* height: calc( (calc( 100vh - 190px ))/ 3  ); */
+    height: 100px;
 }
 
 .page-main-container-dashboard-sidebar{

@@ -1,0 +1,2159 @@
+{
+  "{\"filename\":\"E:/mbanelsonifeanyi.github.io/server/app.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"E:/mbanelsonifeanyi.github.io/server\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          },
+          {
+            "source": "./controller/sendItResources1",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "sendItResources"
+              }
+            ]
+          },
+          {
+            "source": "body-parser",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "bodyParser"
+              }
+            ]
+          },
+          {
+            "source": "./routes/index",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "index"
+              }
+            ]
+          },
+          {
+            "source": "./routes/api",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "api"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "E:/mbanelsonifeanyi.github.io/server/app.js",
+      "filenameRelative": "E:/mbanelsonifeanyi.github.io/server/app.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "app.js",
+      "sourceFileName": "app.js",
+      "sourceRoot": "E:/mbanelsonifeanyi.github.io/server",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "E:/mbanelsonifeanyi.github.io/server",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "app"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _express = require('express');\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _sendItResources = require('./controller/sendItResources1');\n\nvar _sendItResources2 = _interopRequireDefault(_sendItResources);\n\nvar _bodyParser = require('body-parser');\n\nvar _bodyParser2 = _interopRequireDefault(_bodyParser);\n\nvar _index = require('./routes/index');\n\nvar _index2 = _interopRequireDefault(_index);\n\nvar _api = require('./routes/api');\n\nvar _api2 = _interopRequireDefault(_api);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express2.default)();\n\n// import routes\n\n\napp.use(_bodyParser2.default.json());\napp.use(_bodyParser2.default.urlencoded({ extended: false }));\napp.use('/', _index2.default);\napp.use('/api', _api2.default);\n\nvar port = process.env.PORT || 3000;\n\napp.listen(port, function () {\n  return console.log('Listening On Port ' + port + '...');\n});\n\nexports.default = app;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5qcyJdLCJuYW1lcyI6WyJhcHAiLCJ1c2UiLCJib2R5UGFyc2VyIiwianNvbiIsInVybGVuY29kZWQiLCJleHRlbmRlZCIsImluZGV4IiwiYXBpIiwicG9ydCIsInByb2Nlc3MiLCJlbnYiLCJQT1JUIiwibGlzdGVuIiwiY29uc29sZSIsImxvZyJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7Ozs7QUFDQTs7OztBQUNBOzs7O0FBS0E7Ozs7QUFDQTs7Ozs7O0FBSkEsSUFBTUEsTUFBTSx3QkFBWjs7QUFFQTs7O0FBSUFBLElBQUlDLEdBQUosQ0FBUUMscUJBQVdDLElBQVgsRUFBUjtBQUNBSCxJQUFJQyxHQUFKLENBQVFDLHFCQUFXRSxVQUFYLENBQXNCLEVBQUVDLFVBQVUsS0FBWixFQUF0QixDQUFSO0FBQ0FMLElBQUlDLEdBQUosQ0FBUSxHQUFSLEVBQWFLLGVBQWI7QUFDQU4sSUFBSUMsR0FBSixDQUFRLE1BQVIsRUFBZ0JNLGFBQWhCOztBQUVBLElBQU1DLE9BQU9DLFFBQVFDLEdBQVIsQ0FBWUMsSUFBWixJQUFxQixJQUFsQzs7QUFFQVgsSUFBSVksTUFBSixDQUFZSixJQUFaLEVBQWtCO0FBQUEsU0FBT0ssUUFBUUMsR0FBUix3QkFBa0NOLElBQWxDLFNBQVA7QUFBQSxDQUFsQjs7a0JBRWVSLEciLCJmaWxlIjoiYXBwLmpzIiwic291cmNlUm9vdCI6IkU6L21iYW5lbHNvbmlmZWFueWkuZ2l0aHViLmlvL3NlcnZlciIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBleHByZXNzIGZyb20gJ2V4cHJlc3MnXHJcbmltcG9ydCBzZW5kSXRSZXNvdXJjZXMgZnJvbSAnLi9jb250cm9sbGVyL3NlbmRJdFJlc291cmNlczEnXHJcbmltcG9ydCBib2R5UGFyc2VyIGZyb20gJ2JvZHktcGFyc2VyJ1xyXG5cclxuY29uc3QgYXBwID0gZXhwcmVzcygpXHJcblxyXG4vLyBpbXBvcnQgcm91dGVzXHJcbmltcG9ydCBpbmRleCBmcm9tICcuL3JvdXRlcy9pbmRleCdcclxuaW1wb3J0IGFwaSBmcm9tICcuL3JvdXRlcy9hcGknXHJcblxyXG5hcHAudXNlKGJvZHlQYXJzZXIuanNvbigpKVxyXG5hcHAudXNlKGJvZHlQYXJzZXIudXJsZW5jb2RlZCh7IGV4dGVuZGVkOiBmYWxzZX0gKSApXHJcbmFwcC51c2UoJy8nLCBpbmRleClcclxuYXBwLnVzZSgnL2FwaScsIGFwaSlcclxuXHJcbmNvbnN0IHBvcnQgPSBwcm9jZXNzLmVudi5QT1JUICB8fCAzMDAwXHJcbiBcclxuYXBwLmxpc3RlbiggcG9ydCwgKCApID0+IGNvbnNvbGUubG9nKCBgTGlzdGVuaW5nIE9uIFBvcnQgJHtwb3J0fS4uLmAgKSApXHJcblxyXG5leHBvcnQgZGVmYXVsdCBhcHAiXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "app.js"
+      ],
+      "names": [
+        "app",
+        "use",
+        "bodyParser",
+        "json",
+        "urlencoded",
+        "extended",
+        "index",
+        "api",
+        "port",
+        "process",
+        "env",
+        "PORT",
+        "listen",
+        "console",
+        "log"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;AACA;;;;AAKA;;;;AACA;;;;;;AAJA,IAAMA,MAAM,wBAAZ;;AAEA;;;AAIAA,IAAIC,GAAJ,CAAQC,qBAAWC,IAAX,EAAR;AACAH,IAAIC,GAAJ,CAAQC,qBAAWE,UAAX,CAAsB,EAAEC,UAAU,KAAZ,EAAtB,CAAR;AACAL,IAAIC,GAAJ,CAAQ,GAAR,EAAaK,eAAb;AACAN,IAAIC,GAAJ,CAAQ,MAAR,EAAgBM,aAAhB;;AAEA,IAAMC,OAAOC,QAAQC,GAAR,CAAYC,IAAZ,IAAqB,IAAlC;;AAEAX,IAAIY,MAAJ,CAAYJ,IAAZ,EAAkB;AAAA,SAAOK,QAAQC,GAAR,wBAAkCN,IAAlC,SAAP;AAAA,CAAlB;;kBAEeR,G",
+      "file": "app.js",
+      "sourceRoot": "E:/mbanelsonifeanyi.github.io/server",
+      "sourcesContent": [
+        "import express from 'express'\r\nimport sendItResources from './controller/sendItResources1'\r\nimport bodyParser from 'body-parser'\r\n\r\nconst app = express()\r\n\r\n// import routes\r\nimport index from './routes/index'\r\nimport api from './routes/api'\r\n\r\napp.use(bodyParser.json())\r\napp.use(bodyParser.urlencoded({ extended: false} ) )\r\napp.use('/', index)\r\napp.use('/api', api)\r\n\r\nconst port = process.env.PORT  || 3000\r\n \r\napp.listen( port, ( ) => console.log( `Listening On Port ${port}...` ) )\r\n\r\nexport default app"
+      ]
+    },
+    "mtime": 1542231782000
+  },
+  "{\"filename\":\"E:/mbanelsonifeanyi.github.io/server/controller/sendItResources1.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"E:/mbanelsonifeanyi.github.io/server/controller\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "createClass",
+        "classCallCheck",
+        "toConsumableArray",
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "./sendItResourcesArray",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "sendItResourcesArray"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [
+            "SendITResources"
+          ],
+          "specifiers": [
+            {
+              "kind": "local",
+              "local": "SendITResources",
+              "exported": "default"
+            }
+          ]
+        }
+      }
+    },
+    "options": {
+      "filename": "E:/mbanelsonifeanyi.github.io/server/controller/sendItResources1.js",
+      "filenameRelative": "E:/mbanelsonifeanyi.github.io/server/controller/sendItResources1.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "sendItResources1.js",
+      "sourceFileName": "sendItResources1.js",
+      "sourceRoot": "E:/mbanelsonifeanyi.github.io/server/controller",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "E:/mbanelsonifeanyi.github.io/server/controller",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "sendItResources1"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _sendItResourcesArray = require('./sendItResourcesArray');\n\nvar _sendItResourcesArray2 = _interopRequireDefault(_sendItResourcesArray);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar SendITResources = function () {\n\tfunction SendITResources() {\n\t\t_classCallCheck(this, SendITResources);\n\t}\n\n\t_createClass(SendITResources, null, [{\n\t\tkey: 'addToSendItResources',\n\t\tvalue: function addToSendItResources(userName, userEmail, parcelName) {\n\t\t\treturn [{ userName: userName, userEmail: userEmail, parcelName: parcelName }].concat(_toConsumableArray(_sendItResourcesArray2.default));\n\t\t}\n\t}, {\n\t\tkey: 'getSpecificSendItResourceByUserId',\n\t\tvalue: function getSpecificSendItResourceByUserId(userId) {\n\t\t\treturn _sendItResourcesArray2.default.filter(function (sendItResource) {\n\t\t\t\treturn sendItResource.userId === userId;\n\t\t\t});\n\t\t}\n\t}, {\n\t\tkey: 'getSpecificSendItResourceByParcelId',\n\t\tvalue: function getSpecificSendItResourceByParcelId(parcelId) {\n\t\t\treturn _sendItResourcesArray2.default.filter(function (sendItResource) {\n\t\t\t\treturn sendItResource.parcelId === parcelId;\n\t\t\t});\n\t\t}\n\t}, {\n\t\tkey: 'cancelSendItResource',\n\t\tvalue: function cancelSendItResource(parcelId) {\n\t\t\treturn _sendItResourcesArray2.default.map(function (sendItResource) {\n\t\t\t\treturn sendItResource.parcelId === parcelId ? sendItResource.cancelled = !sendItResource.cancelled : sendItResource;\n\t\t\t});\n\t\t}\n\t}, {\n\t\tkey: 'getAllSendItResources',\n\t\tvalue: function getAllSendItResources() {\n\t\t\treturn _sendItResourcesArray2.default;\n\t\t}\n\t}]);\n\n\treturn SendITResources;\n}();\n\nexports.default = SendITResources;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlbmRJdFJlc291cmNlczEuanMiXSwibmFtZXMiOlsiU2VuZElUUmVzb3VyY2VzIiwidXNlck5hbWUiLCJ1c2VyRW1haWwiLCJwYXJjZWxOYW1lIiwic2VuZEl0UmVzb3VyY2VzQXJyYXkiLCJ1c2VySWQiLCJmaWx0ZXIiLCJzZW5kSXRSZXNvdXJjZSIsInBhcmNlbElkIiwibWFwIiwiY2FuY2VsbGVkIl0sIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUFBOzs7Ozs7Ozs7O0lBQ3FCQSxlOzs7Ozs7O3VDQUdTQyxRLEVBQVVDLFMsRUFBV0MsVSxFQUFZO0FBQzdELFdBQVEsRUFBQ0YsVUFBVUEsUUFBWCxFQUFxQkMsV0FBV0EsU0FBaEMsRUFBMkNDLFlBQVlBLFVBQXZELEVBQVIsNEJBQStFQyw4QkFBL0U7QUFFQTs7O29EQUMwQ0MsTSxFQUFRO0FBQ2xELFVBQU9ELCtCQUNORSxNQURNLENBQ0U7QUFBQSxXQUFtQkMsZUFBZUYsTUFBZixLQUEwQkEsTUFBN0M7QUFBQSxJQURGLENBQVA7QUFFQTs7O3NEQUM0Q0csUSxFQUFVO0FBQ3RELFVBQU9KLCtCQUNORSxNQURNLENBQ0U7QUFBQSxXQUFtQkMsZUFBZUMsUUFBZixLQUE0QkEsUUFBL0M7QUFBQSxJQURGLENBQVA7QUFFQTs7O3VDQUU0QkEsUSxFQUFVO0FBQ3RDLFVBQU9KLCtCQUNOSyxHQURNLENBQ0Y7QUFBQSxXQUFrQkYsZUFBZUMsUUFBZixLQUE0QkEsUUFBNUIsR0FBdUNELGVBQWVHLFNBQWYsR0FBMkIsQ0FBQ0gsZUFBZUcsU0FBbEYsR0FBOEZILGNBQWhIO0FBQUEsSUFERSxDQUFQO0FBR0E7OzswQ0FFNkI7QUFDN0IsVUFBT0gsOEJBQVA7QUFDQTs7Ozs7O2tCQXhCbUJKLGUiLCJmaWxlIjoic2VuZEl0UmVzb3VyY2VzMS5qcyIsInNvdXJjZVJvb3QiOiJFOi9tYmFuZWxzb25pZmVhbnlpLmdpdGh1Yi5pby9zZXJ2ZXIvY29udHJvbGxlciIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzZW5kSXRSZXNvdXJjZXNBcnJheSBmcm9tICcuL3NlbmRJdFJlc291cmNlc0FycmF5JztcclxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgU2VuZElUUmVzb3VyY2VzIHtcclxuXHRcclxuXHJcblx0c3RhdGljIGFkZFRvU2VuZEl0UmVzb3VyY2VzKCB1c2VyTmFtZSwgdXNlckVtYWlsLCBwYXJjZWxOYW1lICl7XHJcblx0XHRyZXR1cm4gW3t1c2VyTmFtZTogdXNlck5hbWUsIHVzZXJFbWFpbDogdXNlckVtYWlsLCBwYXJjZWxOYW1lOiBwYXJjZWxOYW1lfSwgLi4uc2VuZEl0UmVzb3VyY2VzQXJyYXlcclxuXHRcdF1cclxuXHR9O1xyXG5cdHN0YXRpYyBnZXRTcGVjaWZpY1NlbmRJdFJlc291cmNlQnlVc2VySWQoICB1c2VySWQgKXtcclxuXHRcdHJldHVybiBzZW5kSXRSZXNvdXJjZXNBcnJheVxyXG5cdFx0LmZpbHRlciggc2VuZEl0UmVzb3VyY2UgPT4gIHNlbmRJdFJlc291cmNlLnVzZXJJZCA9PT0gdXNlcklkIClcclxuXHR9O1xyXG5cdHN0YXRpYyBnZXRTcGVjaWZpY1NlbmRJdFJlc291cmNlQnlQYXJjZWxJZCggIHBhcmNlbElkICl7XHJcblx0XHRyZXR1cm4gc2VuZEl0UmVzb3VyY2VzQXJyYXlcclxuXHRcdC5maWx0ZXIoIHNlbmRJdFJlc291cmNlID0+ICBzZW5kSXRSZXNvdXJjZS5wYXJjZWxJZCA9PT0gcGFyY2VsSWQgKVxyXG5cdH07XHJcblx0XHJcblx0c3RhdGljIGNhbmNlbFNlbmRJdFJlc291cmNlKCBwYXJjZWxJZCApe1xyXG5cdFx0cmV0dXJuIHNlbmRJdFJlc291cmNlc0FycmF5XHJcblx0XHQubWFwKHNlbmRJdFJlc291cmNlID0+IHNlbmRJdFJlc291cmNlLnBhcmNlbElkID09PSBwYXJjZWxJZCA/IHNlbmRJdFJlc291cmNlLmNhbmNlbGxlZCA9ICFzZW5kSXRSZXNvdXJjZS5jYW5jZWxsZWQgOiBzZW5kSXRSZXNvdXJjZSlcclxuXHRcdFxyXG5cdH07XHJcblx0XHJcblx0c3RhdGljIGdldEFsbFNlbmRJdFJlc291cmNlcygpe1xyXG5cdFx0cmV0dXJuIHNlbmRJdFJlc291cmNlc0FycmF5XHJcblx0fVxyXG5cdFxyXG59XHJcblxyXG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "sendItResources1.js"
+      ],
+      "names": [
+        "SendITResources",
+        "userName",
+        "userEmail",
+        "parcelName",
+        "sendItResourcesArray",
+        "userId",
+        "filter",
+        "sendItResource",
+        "parcelId",
+        "map",
+        "cancelled"
+      ],
+      "mappings": ";;;;;;;;AAAA;;;;;;;;;;IACqBA,e;;;;;;;uCAGSC,Q,EAAUC,S,EAAWC,U,EAAY;AAC7D,WAAQ,EAACF,UAAUA,QAAX,EAAqBC,WAAWA,SAAhC,EAA2CC,YAAYA,UAAvD,EAAR,4BAA+EC,8BAA/E;AAEA;;;oDAC0CC,M,EAAQ;AAClD,UAAOD,+BACNE,MADM,CACE;AAAA,WAAmBC,eAAeF,MAAf,KAA0BA,MAA7C;AAAA,IADF,CAAP;AAEA;;;sDAC4CG,Q,EAAU;AACtD,UAAOJ,+BACNE,MADM,CACE;AAAA,WAAmBC,eAAeC,QAAf,KAA4BA,QAA/C;AAAA,IADF,CAAP;AAEA;;;uCAE4BA,Q,EAAU;AACtC,UAAOJ,+BACNK,GADM,CACF;AAAA,WAAkBF,eAAeC,QAAf,KAA4BA,QAA5B,GAAuCD,eAAeG,SAAf,GAA2B,CAACH,eAAeG,SAAlF,GAA8FH,cAAhH;AAAA,IADE,CAAP;AAGA;;;0CAE6B;AAC7B,UAAOH,8BAAP;AACA;;;;;;kBAxBmBJ,e",
+      "file": "sendItResources1.js",
+      "sourceRoot": "E:/mbanelsonifeanyi.github.io/server/controller",
+      "sourcesContent": [
+        "import sendItResourcesArray from './sendItResourcesArray';\r\nexport default class SendITResources {\r\n\t\r\n\r\n\tstatic addToSendItResources( userName, userEmail, parcelName ){\r\n\t\treturn [{userName: userName, userEmail: userEmail, parcelName: parcelName}, ...sendItResourcesArray\r\n\t\t]\r\n\t};\r\n\tstatic getSpecificSendItResourceByUserId(  userId ){\r\n\t\treturn sendItResourcesArray\r\n\t\t.filter( sendItResource =>  sendItResource.userId === userId )\r\n\t};\r\n\tstatic getSpecificSendItResourceByParcelId(  parcelId ){\r\n\t\treturn sendItResourcesArray\r\n\t\t.filter( sendItResource =>  sendItResource.parcelId === parcelId )\r\n\t};\r\n\t\r\n\tstatic cancelSendItResource( parcelId ){\r\n\t\treturn sendItResourcesArray\r\n\t\t.map(sendItResource => sendItResource.parcelId === parcelId ? sendItResource.cancelled = !sendItResource.cancelled : sendItResource)\r\n\t\t\r\n\t};\r\n\t\r\n\tstatic getAllSendItResources(){\r\n\t\treturn sendItResourcesArray\r\n\t}\r\n\t\r\n}\r\n\r\n"
+      ]
+    },
+    "mtime": 1542232758000
+  },
+  "{\"filename\":\"E:/mbanelsonifeanyi.github.io/server/controller/sendItResourcesArray.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"E:/mbanelsonifeanyi.github.io/server/controller\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "E:/mbanelsonifeanyi.github.io/server/controller/sendItResourcesArray.js",
+      "filenameRelative": "E:/mbanelsonifeanyi.github.io/server/controller/sendItResourcesArray.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "sendItResourcesArray.js",
+      "sourceFileName": "sendItResourcesArray.js",
+      "sourceRoot": "E:/mbanelsonifeanyi.github.io/server/controller",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "E:/mbanelsonifeanyi.github.io/server/controller",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "sendItResourcesArray"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\n\nvar sendItResourcesArray = [{ name: 'mba nelson ifeanni', email: 'time', cancelled: false, userId: 1, parcelId: 1 }, { name: 'something1', email: 'time1', cancelled: false, userId: 2, parcelId: 2 }, { name: 'something2', email: 'time2', cancelled: false, userId: 3, parcelId: 3 }, { name: 'something', email: 'time', cancelled: true, userId: 1, parcelId: 1 }];\n\nexports.default = sendItResourcesArray;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlbmRJdFJlc291cmNlc0FycmF5LmpzIl0sIm5hbWVzIjpbInNlbmRJdFJlc291cmNlc0FycmF5IiwibmFtZSIsImVtYWlsIiwiY2FuY2VsbGVkIiwidXNlcklkIiwicGFyY2VsSWQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFFQSxJQUFNQSx1QkFBdUIsQ0FBQyxFQUFFQyxNQUFNLG9CQUFSLEVBQThCQyxPQUFPLE1BQXJDLEVBQTZDQyxXQUFXLEtBQXhELEVBQStEQyxRQUFRLENBQXZFLEVBQTBFQyxVQUFVLENBQXBGLEVBQUQsRUFDN0IsRUFBRUosTUFBTSxZQUFSLEVBQXNCQyxPQUFPLE9BQTdCLEVBQXNDQyxXQUFXLEtBQWpELEVBQXdEQyxRQUFRLENBQWhFLEVBQW1FQyxVQUFVLENBQTdFLEVBRDZCLEVBRTdCLEVBQUVKLE1BQU0sWUFBUixFQUFzQkMsT0FBTyxPQUE3QixFQUFzQ0MsV0FBVyxLQUFqRCxFQUF3REMsUUFBUSxDQUFoRSxFQUFtRUMsVUFBVSxDQUE3RSxFQUY2QixFQUc3QixFQUFFSixNQUFNLFdBQVIsRUFBcUJDLE9BQU8sTUFBNUIsRUFBb0NDLFdBQVcsSUFBL0MsRUFBcURDLFFBQVEsQ0FBN0QsRUFBZ0VDLFVBQVUsQ0FBMUUsRUFINkIsQ0FBN0I7O2tCQU9lTCxvQiIsImZpbGUiOiJzZW5kSXRSZXNvdXJjZXNBcnJheS5qcyIsInNvdXJjZVJvb3QiOiJFOi9tYmFuZWxzb25pZmVhbnlpLmdpdGh1Yi5pby9zZXJ2ZXIvY29udHJvbGxlciIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5cclxuY29uc3Qgc2VuZEl0UmVzb3VyY2VzQXJyYXkgPSBbeyBuYW1lOiAnbWJhIG5lbHNvbiBpZmVhbm5pJywgZW1haWw6ICd0aW1lJywgY2FuY2VsbGVkOiBmYWxzZSwgdXNlcklkOiAxLCBwYXJjZWxJZDogMSB9LFxyXG57IG5hbWU6ICdzb21ldGhpbmcxJywgZW1haWw6ICd0aW1lMScsIGNhbmNlbGxlZDogZmFsc2UsIHVzZXJJZDogMiwgcGFyY2VsSWQ6IDIgfSxcclxueyBuYW1lOiAnc29tZXRoaW5nMicsIGVtYWlsOiAndGltZTInLCBjYW5jZWxsZWQ6IGZhbHNlLCB1c2VySWQ6IDMsIHBhcmNlbElkOiAzIH0sXHJcbnsgbmFtZTogJ3NvbWV0aGluZycsIGVtYWlsOiAndGltZScsIGNhbmNlbGxlZDogdHJ1ZSwgdXNlcklkOiAxLCBwYXJjZWxJZDogMSB9XHJcbl07XHJcblxyXG5cclxuZXhwb3J0IGRlZmF1bHQgc2VuZEl0UmVzb3VyY2VzQXJyYXk7Il19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "sendItResourcesArray.js"
+      ],
+      "names": [
+        "sendItResourcesArray",
+        "name",
+        "email",
+        "cancelled",
+        "userId",
+        "parcelId"
+      ],
+      "mappings": ";;;;;;;AAEA,IAAMA,uBAAuB,CAAC,EAAEC,MAAM,oBAAR,EAA8BC,OAAO,MAArC,EAA6CC,WAAW,KAAxD,EAA+DC,QAAQ,CAAvE,EAA0EC,UAAU,CAApF,EAAD,EAC7B,EAAEJ,MAAM,YAAR,EAAsBC,OAAO,OAA7B,EAAsCC,WAAW,KAAjD,EAAwDC,QAAQ,CAAhE,EAAmEC,UAAU,CAA7E,EAD6B,EAE7B,EAAEJ,MAAM,YAAR,EAAsBC,OAAO,OAA7B,EAAsCC,WAAW,KAAjD,EAAwDC,QAAQ,CAAhE,EAAmEC,UAAU,CAA7E,EAF6B,EAG7B,EAAEJ,MAAM,WAAR,EAAqBC,OAAO,MAA5B,EAAoCC,WAAW,IAA/C,EAAqDC,QAAQ,CAA7D,EAAgEC,UAAU,CAA1E,EAH6B,CAA7B;;kBAOeL,oB",
+      "file": "sendItResourcesArray.js",
+      "sourceRoot": "E:/mbanelsonifeanyi.github.io/server/controller",
+      "sourcesContent": [
+        "\r\n\r\nconst sendItResourcesArray = [{ name: 'mba nelson ifeanni', email: 'time', cancelled: false, userId: 1, parcelId: 1 },\r\n{ name: 'something1', email: 'time1', cancelled: false, userId: 2, parcelId: 2 },\r\n{ name: 'something2', email: 'time2', cancelled: false, userId: 3, parcelId: 3 },\r\n{ name: 'something', email: 'time', cancelled: true, userId: 1, parcelId: 1 }\r\n];\r\n\r\n\r\nexport default sendItResourcesArray;"
+      ]
+    },
+    "mtime": 1542231440000
+  },
+  "{\"filename\":\"E:/mbanelsonifeanyi.github.io/server/routes/index.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"E:/mbanelsonifeanyi.github.io/server/routes\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          },
+          {
+            "source": "../controller/sendItResources1",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "sendItResources"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "E:/mbanelsonifeanyi.github.io/server/routes/index.js",
+      "filenameRelative": "E:/mbanelsonifeanyi.github.io/server/routes/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "E:/mbanelsonifeanyi.github.io/server/routes",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "E:/mbanelsonifeanyi.github.io/server/routes",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n\nvar _express = require('express');\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _sendItResources = require('../controller/sendItResources1');\n\nvar _sendItResources2 = _interopRequireDefault(_sendItResources);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n//Instantiating\nvar router = _express2.default.Router();\n\nrouter.get('/', function (request, response) {\n\tvar data = _sendItResources2.default.getAllSendItResources();\n\t// console.log( data )\n\tresponse.send(data);\n});\n\nexports.default = router;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbInJvdXRlciIsImV4cHJlc3MiLCJSb3V0ZXIiLCJnZXQiLCJyZXF1ZXN0IiwicmVzcG9uc2UiLCJkYXRhIiwic2VuZEl0UmVzb3VyY2VzIiwiZ2V0QWxsU2VuZEl0UmVzb3VyY2VzIiwic2VuZCJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7Ozs7QUFDQTs7Ozs7O0FBR0E7QUFDQSxJQUFNQSxTQUFTQyxrQkFBUUMsTUFBUixFQUFmOztBQUVBRixPQUFPRyxHQUFQLENBQVcsR0FBWCxFQUFnQixVQUFDQyxPQUFELEVBQVVDLFFBQVYsRUFBdUI7QUFDdEMsS0FBTUMsT0FBT0MsMEJBQWdCQyxxQkFBaEIsRUFBYjtBQUNBO0FBQ0FILFVBQVNJLElBQVQsQ0FBZUgsSUFBZjtBQUNBLENBSkQ7O2tCQU1lTixNIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlUm9vdCI6IkU6L21iYW5lbHNvbmlmZWFueWkuZ2l0aHViLmlvL3NlcnZlci9yb3V0ZXMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgZXhwcmVzcyBmcm9tICdleHByZXNzJ1xyXG5pbXBvcnQgc2VuZEl0UmVzb3VyY2VzIGZyb20gJy4uL2NvbnRyb2xsZXIvc2VuZEl0UmVzb3VyY2VzMSdcclxuXHJcblxyXG4vL0luc3RhbnRpYXRpbmdcclxuY29uc3Qgcm91dGVyID0gZXhwcmVzcy5Sb3V0ZXIoKVxyXG5cclxucm91dGVyLmdldCgnLycsIChyZXF1ZXN0LCByZXNwb25zZSkgPT4ge1xyXG5cdGNvbnN0IGRhdGEgPSBzZW5kSXRSZXNvdXJjZXMuZ2V0QWxsU2VuZEl0UmVzb3VyY2VzKCAgKSBcclxuXHQvLyBjb25zb2xlLmxvZyggZGF0YSApXHJcblx0cmVzcG9uc2Uuc2VuZCggZGF0YSApXHJcbn0pXHJcblxyXG5leHBvcnQgZGVmYXVsdCByb3V0ZXIiXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "router",
+        "express",
+        "Router",
+        "get",
+        "request",
+        "response",
+        "data",
+        "sendItResources",
+        "getAllSendItResources",
+        "send"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;;;AAGA;AACA,IAAMA,SAASC,kBAAQC,MAAR,EAAf;;AAEAF,OAAOG,GAAP,CAAW,GAAX,EAAgB,UAACC,OAAD,EAAUC,QAAV,EAAuB;AACtC,KAAMC,OAAOC,0BAAgBC,qBAAhB,EAAb;AACA;AACAH,UAASI,IAAT,CAAeH,IAAf;AACA,CAJD;;kBAMeN,M",
+      "file": "index.js",
+      "sourceRoot": "E:/mbanelsonifeanyi.github.io/server/routes",
+      "sourcesContent": [
+        "import express from 'express'\r\nimport sendItResources from '../controller/sendItResources1'\r\n\r\n\r\n//Instantiating\r\nconst router = express.Router()\r\n\r\nrouter.get('/', (request, response) => {\r\n\tconst data = sendItResources.getAllSendItResources(  ) \r\n\t// console.log( data )\r\n\tresponse.send( data )\r\n})\r\n\r\nexport default router"
+      ]
+    },
+    "mtime": 1542231478000
+  },
+  "{\"filename\":\"E:/mbanelsonifeanyi.github.io/server/routes/api.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"E:/mbanelsonifeanyi.github.io/server/routes\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          },
+          {
+            "source": "express-validator/check",
+            "imported": [
+              "check",
+              "validationResult"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "check",
+                "local": "check"
+              },
+              {
+                "kind": "named",
+                "imported": "validationResult",
+                "local": "validationResult"
+              }
+            ]
+          },
+          {
+            "source": "../controller/sendItResources1",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "sendItResources"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "E:/mbanelsonifeanyi.github.io/server/routes/api.js",
+      "filenameRelative": "E:/mbanelsonifeanyi.github.io/server/routes/api.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "api.js",
+      "sourceFileName": "api.js",
+      "sourceRoot": "E:/mbanelsonifeanyi.github.io/server/routes",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "E:/mbanelsonifeanyi.github.io/server/routes",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "api"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n\nvar _express = require('express');\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _check = require('express-validator/check');\n\nvar _sendItResources = require('../controller/sendItResources1');\n\nvar _sendItResources2 = _interopRequireDefault(_sendItResources);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n//  Instantiating\nvar router = _express2.default.Router();\n\n/*  These are API routes. */\n\nrouter.get('/parcels', function (request, response) {\n\tresponse.status(200).json(_sendItResources2.default.getAllSendItResources());\n});\n\nrouter.get('/parcels/:parcelId', function (request, response) {\n\tvar parcelId = parseInt(request.params.parcelId);\n\tvar data = _sendItResources2.default.getSpecificSendItResourceByParcelId(parcelId);\n\tif (data.length === 0) {\n\t\treturn response.status(404).json({\n\t\t\tsuccess: false,\n\t\t\terror: 'Your Parcel is not found!'\n\t\t});\n\t}\n\tresponse.status(200).json(data);\n});\n\nrouter.get('/users/:userId/parcels', function (request, response) {\n\tvar userId = parseInt(request.params.userId);\n\n\tvar data = _sendItResources2.default.getSpecificSendItResourceByUserId(userId);\n\tif (data.length === 0) {\n\t\treturn response.status(404).json({\n\t\t\tsuccess: false,\n\t\t\terror: 'User has no parcels'\n\t\t});\n\t}\n\treturn response.status(200).json(data);\n});\n\nrouter.put('/parcels/:parcelId/cancel', function (request, response) {\n\tvar parcelId = parseInt(request.params.parcelId);\n\tvar result = _sendItResources2.default.getSpecificSendItResourceByParcelId(parcelId);\n\tvar data = _sendItResources2.default.cancelSendItResource(parcelId);\n\tif (result.length === 0) {\n\t\treturn response.status(404).json({\n\t\t\tsuccess: false,\n\t\t\terror: 'No Parcels, You ccan create one'\n\t\t});\n\t}\n\treturn response.status(200).json(data);\n});\n\nrouter.post('/parcels', [(0, _check.check)('userName').isLength({ min: 1 }).withMessage('Username cannot be empty'), (0, _check.check)('userEmail').isLength({ min: 1 }).withMessage('UserEmail cannot be blank'), (0, _check.check)('parcelName').isLength({ min: 1 }).withMessage('Parcel name cannot be blank')], function (request, response) {\n\tvar errors = (0, _check.validationResult)(request);\n\n\tif (!errors.isEmpty()) {\n\t\treturn response.status(400).json({\n\t\t\tsuccess: false,\n\t\t\terror: 'Some credential are blank',\n\t\t\terrors: errors.array()\n\t\t});\n\t}\n\tvar userName = request.body.userName;\n\tvar userEmail = request.body.userEmail;\n\tvar parcelName = request.body.parcelName;\n\tvar data = _sendItResources2.default.addToSendItResources(userName, userEmail, parcelName);\n\treturn response.status(201).json(data);\n});\n\nexports.default = router;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwaS5qcyJdLCJuYW1lcyI6WyJyb3V0ZXIiLCJleHByZXNzIiwiUm91dGVyIiwiZ2V0IiwicmVxdWVzdCIsInJlc3BvbnNlIiwic3RhdHVzIiwianNvbiIsInNlbmRJdFJlc291cmNlcyIsImdldEFsbFNlbmRJdFJlc291cmNlcyIsInBhcmNlbElkIiwicGFyc2VJbnQiLCJwYXJhbXMiLCJkYXRhIiwiZ2V0U3BlY2lmaWNTZW5kSXRSZXNvdXJjZUJ5UGFyY2VsSWQiLCJsZW5ndGgiLCJzdWNjZXNzIiwiZXJyb3IiLCJ1c2VySWQiLCJnZXRTcGVjaWZpY1NlbmRJdFJlc291cmNlQnlVc2VySWQiLCJwdXQiLCJyZXN1bHQiLCJjYW5jZWxTZW5kSXRSZXNvdXJjZSIsInBvc3QiLCJpc0xlbmd0aCIsIm1pbiIsIndpdGhNZXNzYWdlIiwiZXJyb3JzIiwiaXNFbXB0eSIsImFycmF5IiwidXNlck5hbWUiLCJib2R5IiwidXNlckVtYWlsIiwicGFyY2VsTmFtZSIsImFkZFRvU2VuZEl0UmVzb3VyY2VzIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTs7OztBQUNBOztBQUNBOzs7Ozs7QUFJQTtBQUNBLElBQU1BLFNBQVNDLGtCQUFRQyxNQUFSLEVBQWY7O0FBR0E7O0FBRUFGLE9BQU9HLEdBQVAsQ0FBVyxVQUFYLEVBQXVCLFVBQUNDLE9BQUQsRUFBVUMsUUFBVixFQUF1QjtBQUM3Q0EsVUFBU0MsTUFBVCxDQUFpQixHQUFqQixFQUF1QkMsSUFBdkIsQ0FBNEJDLDBCQUFnQkMscUJBQWhCLEVBQTVCO0FBQ0EsQ0FGRDs7QUFJQVQsT0FBT0csR0FBUCxDQUFXLG9CQUFYLEVBQWlDLFVBQUNDLE9BQUQsRUFBVUMsUUFBVixFQUF1QjtBQUN2RCxLQUFNSyxXQUFXQyxTQUFTUCxRQUFRUSxNQUFSLENBQWVGLFFBQXhCLENBQWpCO0FBQ0EsS0FBTUcsT0FBT0wsMEJBQWdCTSxtQ0FBaEIsQ0FBcURKLFFBQXJELENBQWI7QUFDQSxLQUFHRyxLQUFLRSxNQUFMLEtBQWdCLENB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LEdBQWpCLEVBQXVCQyxJQUF2QixDQUE2Qk0sSUFBN0IsQ0FBUjtBQUNDLENBeEJEOztrQkEyQmViLE0iLCJmaWxlIjoiYXBpLmpzIiwic291cmNlUm9vdCI6IkU6L21iYW5lbHNvbmlmZWFueWkuZ2l0aHViLmlvL3NlcnZlci9yb3V0ZXMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgZXhwcmVzcyBmcm9tICdleHByZXNzJ1xyXG5pbXBvcnQgeyBjaGVjaywgdmFsaWRhdGlvblJlc3VsdCB9IGZyb20gJ2V4cHJlc3MtdmFsaWRhdG9yL2NoZWNrJztcclxuaW1wb3J0IHNlbmRJdFJlc291cmNlcyBmcm9tICcuLi9jb250cm9sbGVyL3NlbmRJdFJlc291cmNlczEnXHJcblxyXG5cclxuXHJcbi8vICBJbnN0YW50aWF0aW5nXHJcbmNvbnN0IHJvdXRlciA9IGV4cHJlc3MuUm91dGVyKClcclxuXHJcblxyXG4vKiAgVGhlc2UgYXJlIEFQSSByb3V0ZXMuICovXHJcblxyXG5yb3V0ZXIuZ2V0KCcvcGFyY2VscycsIChyZXF1ZXN0LCByZXNwb25zZSkgPT4ge1xyXG5cdHJlc3BvbnNlLnN0YXR1cyggMjAwICkuanNvbihzZW5kSXRSZXNvdXJjZXMuZ2V0QWxsU2VuZEl0UmVzb3VyY2VzICggICkpXHJcbn0pXHJcblxyXG5yb3V0ZXIuZ2V0KCcvcGFyY2Vscy86cGFyY2VsSWQnLCAocmVxdWVzdCwgcmVzcG9uc2UpID0+IHtcclxuXHRjb25zdCBwYXJjZWxJZCA9IHBhcnNlSW50KHJlcXVlc3QucGFyYW1zLnBhcmNlbElkKVxyXG5cdGNvbnN0IGRhdGEgPSBzZW5kSXRSZXNvdXJjZXMuZ2V0U3BlY2lmaWNTZW5kSXRSZXNvdXJjZUJ5UGFyY2VsSWQoIHBhcmNlbElkICkgXHJcblx0aWYoZGF0YS5sZW5ndGggPT09IDApIHtcclxuXHRcdHJldHVybiByZXNwb25zZS5zdGF0dXMoNDA0KS5qc29uKHtcclxuXHRcdFx0c3VjY2VzczogZmFsc2UsXHJcblx0XHRcdGVycm9yOiAnWW91ciBQYXJjZWwgaXMgbm90IGZvdW5kISdcclxuXHRcdH0pXHJcblx0fVxyXG5cdHJlc3BvbnNlLnN0YXR1cyggMjAwICkuanNvbiggZGF0YSApXHJcbn0pXHJcblx0XHJcbnJvdXRlci5nZXQoJy91c2Vycy86dXNlcklkL3BhcmNlbHMnLCAocmVxdWVzdCwgcmVzcG9uc2UpID0+IHtcclxuXHRjb25zdCB1c2VySWQgPSBwYXJzZUludChyZXF1ZXN0LnBhcmFtcy51c2VySWQpXHJcblx0XHJcblx0Y29uc3QgZGF0YSA9IHNlbmRJdFJlc291cmNlcy5nZXRTcGVjaWZpY1NlbmRJdFJlc291cmNlQnlVc2VySWQoIHVzZXJJZCApIFxyXG5cdGlmKGRhdGEubGVuZ3RoID09PSAwKXtcclxuXHRcdHJldHVybiByZXNwb25zZS5zdGF0dXMoNDA0KS5qc29uKHtcclxuXHRcdFx0c3VjY2VzczogZmFsc2UsXHJcblx0XHRcdGVycm9yOiAnVXNlciBoYXMgbm8gcGFyY2VscycsXHJcblx0XHR9KVxyXG5cdH1cclxuXHRyZXR1cm4gcmVzcG9uc2Uuc3RhdHVzKCAyMDAgKS5qc29uKCBkYXRhIClcclxufSlcclxuXHJcbnJvdXRlci5wdXQoJy9wYXJjZWxzLzpwYXJjZWxJZC9jYW5jZWwnLCAocmVxdWVzdCwgcmVzcG9uc2UpID0+IHtcclxuXHRjb25zdCBwYXJjZWxJZCA9IHBhcnNlSW50KHJlcXVlc3QucGFyYW1zLnBhcmNlbElkKVxyXG5cdGNvbnN0IHJlc3VsdCA9IHNlbmRJdFJlc291cmNlcy5nZXRTcGVjaWZpY1NlbmRJdFJlc291cmNlQnlQYXJjZWxJZChwYXJjZWxJZCk7XHJcblx0Y29uc3QgZGF0YSA9IHNlbmRJdFJlc291cmNlcy5jYW5jZWxTZW5kSXRSZXNvdXJjZSggcGFyY2VsSWQpO1xyXG5cdGlmIChyZXN1bHQubGVuZ3RoID09PSAwKSB7XHJcblx0XHRyZXR1cm4gcmVzcG9uc2Uuc3RhdHVzKDQwNCkuanNvbih7XHJcblx0XHRcdHN1Y2Nlc3M6IGZhbHNlLFxyXG5cdFx0XHRlcnJvcjogJ05vIFBhcmNlbHMsIFlvdSBjY2FuIGNyZWF0ZSBvbmUnLFxyXG5cdFx0fSlcclxuXHR9XHJcbiBcdFx0cmV0dXJuIHJlc3BvbnNlLnN0YXR1cyggMjAwICkuanNvbiggZGF0YSApXHJcbn0pXHRcclxuXHJcblxyXG5yb3V0ZXIucG9zdCgnL3BhcmNlbHMnLCBbXHJcbmNoZWNrKCd1c2VyTmFtZScpLmlzTGVuZ3RoKHttaW46IDF9KS53aXRoTWVzc2FnZSgnVXNlcm5hbWUgY2Fubm90IGJlIGVtcHR5JyksXHJcbmNoZWNrKCd1c2VyRW1haWwnKS5pc0xlbmd0aCh7bWluOjF9KS53aXRoTWVzc2FnZSgnVXNlckVtYWlsIGNhbm5vdCBiZSBibGFuaycpLFxyXG5jaGVjaygncGFyY2VsTmFtZScpLmlzTGVuZ3RoKHttaW46MX0pLndpdGhNZXNzYWdlKCdQYXJjZWwgbmFtZSBjYW5ub3QgYmUgYmxhbmsnKSxcclxuXSwgXHJcblxyXG5cclxuXHJcblxyXG4ocmVxdWVzdCwgcmVzcG9uc2UpID0+IHtcclxuXHRjb25zdCBlcnJvcnMgPSB2YWxpZGF0aW9uUmVzdWx0KHJlcXVlc3QpO1xyXG5cclxuXHRpZighZXJyb3JzLmlzRW1wdHkoKSl7XHJcblx0XHRyZXR1cm4gcmVzcG9uc2Uuc3RhdHVzKDQwMCkuanNvbih7XHJcblx0XHRcdHN1Y2Nlc3M6IGZhbHNlLFxyXG5cdFx0XHRlcnJvcjogJ1NvbWUgY3JlZGVudGlhbCBhcmUgYmxhbmsnLFxyXG5cdFx0XHRlcnJvcnM6IGVycm9ycy5hcnJheSgpLFxyXG5cdFx0fSlcclxuXHR9XHJcblx0Y29uc3QgdXNlck5hbWUgPSByZXF1ZXN0LmJvZHkudXNlck5hbWU7XHJcblx0Y29uc3QgdXNlckVtYWlsID0gcmVxdWVzdC5ib2R5LnVzZXJFbWFpbDtcclxuXHRjb25zdCBwYXJjZWxOYW1lID0gcmVxdWVzdC5ib2R5LnBhcmNlbE5hbWU7XHJcblx0Y29uc3QgZGF0YSA9IHNlbmRJdFJlc291cmNlcy5hZGRUb1NlbmRJdFJlc291cmNlcyggdXNlck5hbWUsIHVzZXJFbWFpbCwgcGFyY2VsTmFtZSApIFxyXG5yZXR1cm4gXHRyZXNwb25zZS5zdGF0dXMoIDIwMSApLmpzb24oIGRhdGEpXHJcbn0pXHJcblxyXG5cclxuZXhwb3J0IGRlZmF1bHQgcm91dGVyIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "api.js"
+      ],
+      "names": [
+        "router",
+        "express",
+        "Router",
+        "get",
+        "request",
+        "response",
+        "status",
+        "json",
+        "sendItResources",
+        "getAllSendItResources",
+        "parcelId",
+        "parseInt",
+        "params",
+        "data",
+        "getSpecificSendItResourceByParcelId",
+        "length",
+        "success",
+        "error",
+        "userId",
+        "getSpecificSendItResourceByUserId",
+        "put",
+        "result",
+        "cancelSendItResource",
+        "post",
+        "isLength",
+        "min",
+        "withMessage",
+        "errors",
+        "isEmpty",
+        "array",
+        "userName",
+        "body",
+        "userEmail",
+        "parcelName",
+        "addToSendItResources"
+      ],
+      "mappings": "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",
+      "file": "api.js",
+      "sourceRoot": "E:/mbanelsonifeanyi.github.io/server/routes",
+      "sourcesContent": [
+        "import express from 'express'\r\nimport { check, validationResult } from 'express-validator/check';\r\nimport sendItResources from '../controller/sendItResources1'\r\n\r\n\r\n\r\n//  Instantiating\r\nconst router = express.Router()\r\n\r\n\r\n/*  These are API routes. */\r\n\r\nrouter.get('/parcels', (request, response) => {\r\n\tresponse.status( 200 ).json(sendItResources.getAllSendItResources (  ))\r\n})\r\n\r\nrouter.get('/parcels/:parcelId', (request, response) => {\r\n\tconst parcelId = parseInt(request.params.parcelId)\r\n\tconst data = sendItResources.getSpecificSendItResourceByParcelId( parcelId ) \r\n\tif(data.length === 0) {\r\n\t\treturn response.status(404).json({\r\n\t\t\tsuccess: false,\r\n\t\t\terror: 'Your Parcel is not found!'\r\n\t\t})\r\n\t}\r\n\tresponse.status( 200 ).json( data )\r\n})\r\n\t\r\nrouter.get('/users/:userId/parcels', (request, response) => {\r\n\tconst userId = parseInt(request.params.userId)\r\n\t\r\n\tconst data = sendItResources.getSpecificSendItResourceByUserId( userId ) \r\n\tif(data.length === 0){\r\n\t\treturn response.status(404).json({\r\n\t\t\tsuccess: false,\r\n\t\t\terror: 'User has no parcels',\r\n\t\t})\r\n\t}\r\n\treturn response.status( 200 ).json( data )\r\n})\r\n\r\nrouter.put('/parcels/:parcelId/cancel', (request, response) => {\r\n\tconst parcelId = parseInt(request.params.parcelId)\r\n\tconst result = sendItResources.getSpecificSendItResourceByParcelId(parcelId);\r\n\tconst data = sendItResources.cancelSendItResource( parcelId);\r\n\tif (result.length === 0) {\r\n\t\treturn response.status(404).json({\r\n\t\t\tsuccess: false,\r\n\t\t\terror: 'No Parcels, You ccan create one',\r\n\t\t})\r\n\t}\r\n \t\treturn response.status( 200 ).json( data )\r\n})\t\r\n\r\n\r\nrouter.post('/parcels', [\r\ncheck('userName').isLength({min: 1}).withMessage('Username cannot be empty'),\r\ncheck('userEmail').isLength({min:1}).withMessage('UserEmail cannot be blank'),\r\ncheck('parcelName').isLength({min:1}).withMessage('Parcel name cannot be blank'),\r\n], \r\n\r\n\r\n\r\n\r\n(request, response) => {\r\n\tconst errors = validationResult(request);\r\n\r\n\tif(!errors.isEmpty()){\r\n\t\treturn response.status(400).json({\r\n\t\t\tsuccess: false,\r\n\t\t\terror: 'Some credential are blank',\r\n\t\t\terrors: errors.array(),\r\n\t\t})\r\n\t}\r\n\tconst userName = request.body.userName;\r\n\tconst userEmail = request.body.userEmail;\r\n\tconst parcelName = request.body.parcelName;\r\n\tconst data = sendItResources.addToSendItResources( userName, userEmail, parcelName ) \r\nreturn \tresponse.status( 201 ).json( data)\r\n})\r\n\r\n\r\nexport default router"
+      ]
+    },
+    "mtime": 1542233192000
+  },
+  "{\"filename\":\"C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/app.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          },
+          {
+            "source": "body-parser",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "bodyParser"
+              }
+            ]
+          },
+          {
+            "source": "./routes/api",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "api"
+              }
+            ]
+          },
+          {
+            "source": "./routes/index",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "index"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/app.js",
+      "filenameRelative": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/app.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "app.js",
+      "sourceFileName": "app.js",
+      "sourceRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "app"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _express = require('express');\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _bodyParser = require('body-parser');\n\nvar _bodyParser2 = _interopRequireDefault(_bodyParser);\n\nvar _api = require('./routes/api');\n\nvar _api2 = _interopRequireDefault(_api);\n\nvar _index = require('./routes/index');\n\nvar _index2 = _interopRequireDefault(_index);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// import { parseForESLint } from 'babel-eslint';\n\n// import routes\nvar app = (0, _express2.default)();\n// const { parseForESLint } = { parseForESLint: parseForESLint() };\n\n\napp.use(_bodyParser2.default.urlencoded({ extended: false }));\n// app.use(bodyParser.parseForESLint());\n// app.use(bodyParser.json());\napp.use('/', _index2.default);\napp.use('/api', _api2.default);\n\nvar port = process.env.PORT || 3000;\n\napp.listen(port, function () {\n  return console.log('Listening On Port ' + port + '...');\n});\n\nexports.default = app;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5qcyJdLCJuYW1lcyI6WyJhcHAiLCJ1c2UiLCJib2R5UGFyc2VyIiwidXJsZW5jb2RlZCIsImV4dGVuZGVkIiwiaW5kZXgiLCJhcGkiLCJwb3J0IiwicHJvY2VzcyIsImVudiIsIlBPUlQiLCJsaXN0ZW4iLCJjb25zb2xlIiwibG9nIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTs7OztBQUNBOzs7O0FBSUE7Ozs7QUFDQTs7Ozs7O0FBSkE7O0FBRUE7QUFLQSxJQUFNQSxNQUFNLHdCQUFaO0FBQ0E7OztBQUdBQSxJQUFJQyxHQUFKLENBQVFDLHFCQUFXQyxVQUFYLENBQXNCLEVBQUVDLFVBQVUsS0FBWixFQUF0QixDQUFSO0FBQ0E7QUFDQTtBQUNBSixJQUFJQyxHQUFKLENBQVEsR0FBUixFQUFhSSxlQUFiO0FBQ0FMLElBQUlDLEdBQUosQ0FBUSxNQUFSLEVBQWdCSyxhQUFoQjs7QUFFQSxJQUFNQyxPQUFPQyxRQUFRQyxHQUFSLENBQVlDLElBQVosSUFBb0IsSUFBakM7O0FBRUFWLElBQUlXLE1BQUosQ0FBV0osSUFBWCxFQUFpQjtBQUFBLFNBQU1LLFFBQVFDLEdBQVIsd0JBQWlDTixJQUFqQyxTQUFOO0FBQUEsQ0FBakI7O2tCQUVlUCxHIiwiZmlsZSI6ImFwcC5qcyIsInNvdXJjZVJvb3QiOiJDOi9Vc2Vycy9YdHJlbXJ1bGVzL0Rlc2t0b3AvbWJhbmVsc29uaWZlYW55aS5naXRodWIuaW8vc2VydmVyIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGV4cHJlc3MgZnJvbSAnZXhwcmVzcyc7XHJcbmltcG9ydCBib2R5UGFyc2VyIGZyb20gJ2JvZHktcGFyc2VyJztcclxuLy8gaW1wb3J0IHsgcGFyc2VGb3JFU0xpbnQgfSBmcm9tICdiYWJlbC1lc2xpbnQnO1xyXG5cclxuLy8gaW1wb3J0IHJvdXRlc1xyXG5pbXBvcnQgYXBpIGZyb20gJy4vcm91dGVzL2FwaSc7XHJcbmltcG9ydCBpbmRleCBmcm9tICcuL3JvdXRlcy9pbmRleCc7XHJcblxyXG5cclxuY29uc3QgYXBwID0gZXhwcmVzcygpO1xyXG4vLyBjb25zdCB7IHBhcnNlRm9yRVNMaW50IH0gPSB7IHBhcnNlRm9yRVNMaW50OiBwYXJzZUZvckVTTGludCgpIH07XHJcblxyXG5cclxuYXBwLnVzZShib2R5UGFyc2VyLnVybGVuY29kZWQoeyBleHRlbmRlZDogZmFsc2UgfSkpO1xyXG4vLyBhcHAudXNlKGJvZHlQYXJzZXIucGFyc2VGb3JFU0xpbnQoKSk7XHJcbi8vIGFwcC51c2UoYm9keVBhcnNlci5qc29uKCkpO1xyXG5hcHAudXNlKCcvJywgaW5kZXgpO1xyXG5hcHAudXNlKCcvYXBpJywgYXBpKTtcclxuXHJcbmNvbnN0IHBvcnQgPSBwcm9jZXNzLmVudi5QT1JUIHx8IDMwMDBcclxuXHJcbmFwcC5saXN0ZW4ocG9ydCwgKCkgPT4gY29uc29sZS5sb2coYExpc3RlbmluZyBPbiBQb3J0ICR7cG9ydH0uLi5gKSlcclxuXHJcbmV4cG9ydCBkZWZhdWx0IGFwcFxyXG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "app.js"
+      ],
+      "names": [
+        "app",
+        "use",
+        "bodyParser",
+        "urlencoded",
+        "extended",
+        "index",
+        "api",
+        "port",
+        "process",
+        "env",
+        "PORT",
+        "listen",
+        "console",
+        "log"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;AAIA;;;;AACA;;;;;;AAJA;;AAEA;AAKA,IAAMA,MAAM,wBAAZ;AACA;;;AAGAA,IAAIC,GAAJ,CAAQC,qBAAWC,UAAX,CAAsB,EAAEC,UAAU,KAAZ,EAAtB,CAAR;AACA;AACA;AACAJ,IAAIC,GAAJ,CAAQ,GAAR,EAAaI,eAAb;AACAL,IAAIC,GAAJ,CAAQ,MAAR,EAAgBK,aAAhB;;AAEA,IAAMC,OAAOC,QAAQC,GAAR,CAAYC,IAAZ,IAAoB,IAAjC;;AAEAV,IAAIW,MAAJ,CAAWJ,IAAX,EAAiB;AAAA,SAAMK,QAAQC,GAAR,wBAAiCN,IAAjC,SAAN;AAAA,CAAjB;;kBAEeP,G",
+      "file": "app.js",
+      "sourceRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server",
+      "sourcesContent": [
+        "import express from 'express';\r\nimport bodyParser from 'body-parser';\r\n// import { parseForESLint } from 'babel-eslint';\r\n\r\n// import routes\r\nimport api from './routes/api';\r\nimport index from './routes/index';\r\n\r\n\r\nconst app = express();\r\n// const { parseForESLint } = { parseForESLint: parseForESLint() };\r\n\r\n\r\napp.use(bodyParser.urlencoded({ extended: false }));\r\n// app.use(bodyParser.parseForESLint());\r\n// app.use(bodyParser.json());\r\napp.use('/', index);\r\napp.use('/api', api);\r\n\r\nconst port = process.env.PORT || 3000\r\n\r\napp.listen(port, () => console.log(`Listening On Port ${port}...`))\r\n\r\nexport default app\r\n"
+      ]
+    },
+    "mtime": 1542815833492
+  },
+  "{\"filename\":\"C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes/api.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          },
+          {
+            "source": "express-validator/check",
+            "imported": [
+              "check",
+              "validationResult"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "check",
+                "local": "check"
+              },
+              {
+                "kind": "named",
+                "imported": "validationResult",
+                "local": "validationResult"
+              }
+            ]
+          },
+          {
+            "source": "../controller/sendItResources1",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "sendItResources"
+              }
+            ]
+          },
+          {
+            "source": "../controller/sendItResourcesArray",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "sendItResourcesArray"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes/api.js",
+      "filenameRelative": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes/api.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "api.js",
+      "sourceFileName": "api.js",
+      "sourceRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "api"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _express = require('express');\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _check = require('express-validator/check');\n\nvar _sendItResources = require('../controller/sendItResources1');\n\nvar _sendItResources2 = _interopRequireDefault(_sendItResources);\n\nvar _sendItResourcesArray = require('../controller/sendItResourcesArray');\n\nvar _sendItResourcesArray2 = _interopRequireDefault(_sendItResourcesArray);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// const sir = new sendItResources()\n//  Instantiating\nvar router = _express2.default.Router();\n\n/*  These are API routes. */\n\nrouter.get('/parcels', function (request, response) {\n  // console.log(this)\n  var data = _sendItResources2.default.getAllSendItResources();\n  response.status(200).json(data);\n});\n\nrouter.get('/parcels/:parcelId', function (request, response) {\n  var parcelId = parseInt(request.params.parcelId, 10);\n  var data = _sendItResources2.default.getSpecificSendItResourceByParcelId(parcelId);\n  if (data.length === 0) {\n    return response.status(404).json({\n      success: false,\n      error: 'Your Parcel is not found!'\n    });\n  }\n  return response.status(200).json(data);\n});\n\nrouter.get('/users/:userId/parcels', function (request, response) {\n  var userId = parseInt(request.params.userId, 10);\n  var data = _sendItResources2.default.getSpecificSendItResourceByUserId(userId);\n  if (data.length === 0) {\n    return response.status(404).json({\n      success: false,\n      error: 'User has no parcels'\n    });\n  }\n  return response.status(200).json(data);\n});\n\nrouter.delete('/parcels/:parcelId', function (request, response) {\n  var parcelId = parseInt(request.params.parcelId, 10);\n  var obj = _sendItResourcesArray2.default.find(function (sendItResource) {\n    return sendItResource.parcelId === parcelId;\n  });\n  // console.log(sendItResourcesArray)\n  var data = _sendItResources2.default.deleteSpecificSendItResourceByParcelId(parcelId);\n  if (!obj) {\n    return response.status(404).json({\n      success: false,\n      error: 'The order you are trying to delete does not exist, please check the parcel id and try again'\n    });\n  }\n  return response.status(200).json(data);\n});\n\nrouter.put('/parcels/:parcelId/:cancelled', function (request, response) {\n  // const parcelId = parseInt(request.params.parcelId, 10)\n  // const cancelled = request.body.cancelled\n  var _parcelId$cancelled = {\n    parcelId: parseInt(request.params.parcelId, 10),\n    cancelled: request.body.cancelled\n  },\n      parcelId = _parcelId$cancelled.parcelId,\n      cancelled = _parcelId$cancelled.cancelled;\n  // const result = sendItResources.getSpecificSendItResourceByParcelId(parcelId);\n\n  var data = _sendItResources2.default.cancelSendItResource(parcelId, cancelled);\n  // console.log(sendItResources.cancelSendItResource(1, 'something'));\n  if (data.length === 0) {\n    return response.status(404).json({\n      success: false,\n      error: 'No Parcels, You can create one'\n    });\n  }\n  return response.status(200).json(data);\n});\n\nrouter.post('/parcels', [(0, _check.check)('userName').isLength({ min: 1 }).withMessage('Username cannot be empty'), (0, _check.check)('userEmail').isLength({ min: 1 }).withMessage('UserEmail cannot be blank'), (0, _check.check)('parcelName').isLength({ min: 1 }).withMessage('Parcel name cannot be blank')], function (request, response) {\n  var errors = (0, _check.validationResult)(request);\n  if (!errors.isEmpty()) {\n    return response.status(400).json({\n      success: false,\n      error: 'Some credential are blank',\n      errors: errors.array()\n    });\n  }\n  // const userName = request.body.userName;\n  // const userEmail = request.body.userEmail;\n  // const parcelName = request.body.parcelName;\n  var _userEmail$userName$p = {\n    userEmail: request.body.userEmail,\n    userName: request.body.userName,\n    parcelName: request.body.parcelName\n  },\n      userEmail = _userEmail$userName$p.userEmail,\n      userName = _userEmail$userName$p.userName,\n      parcelName = _userEmail$userName$p.parcelName;\n\n  var data = _sendItResources2.default.addToSendItResources(userName, userEmail, parcelName);\n  return response.status(201).json(data);\n});\n\nexports.default = router;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwaS5qcyJdLCJuYW1lcyI6WyJyb3V0ZXIiLCJleHByZXNzIiwiUm91dGVyIiwiZ2V0IiwicmVxdWVzdCIsInJlc3BvbnNlIiwiZGF0YSIsInNlbmRJdFJlc291cmNlcyIsImdldEFsbFNlbmRJdFJlc291cmNlcyIsInN0YXR1cyIsImpzb24iLCJwYXJjZWxJZCIsInBhcnNlSW50IiwicGFyYW1zIiwiZ2V0U3BlY2lmaWNTZW5kSXRSZXNvdXJjZUJ5UGFyY2VsSWQiLCJsZW5ndGgiLCJzdWNjZXNzIiwiZXJyb3IiLCJ1c2VySWQiLCJnZXRTcGVjaWZpY1NlbmRJdFJlc291cmNlQnlVc2VySWQiLCJkZWxldGUiLCJvYmoiLCJzZW5kSXRSZXNvdXJjZXNBcnJheSIsImZpbmQiLCJzZW5kSXRSZXNvdXJjZSIsImRlbGV0ZVNwZWNpZmljU2VuZEl0UmVzb3VyY2VCeVBhcmNlbElkIiwicHV0IiwiY2FuY2VsbGVkIiwiYm9keSIsImNhbmNlbFNlbmRJdFJlc291cmNlIiwicG9zdCIsImlzTGVuZ3RoIiwibWluIiwid2l0aE1lc3NhZ2UiLCJlcnJvcnMiLCJpc0VtcHR5IiwiYXJyYXkiLCJ1c2VyRW1haWwiLCJ1c2VyTmFtZSIsInBhcmNlbE5hbWUiLCJhZGRUb1NlbmRJdFJlc291cmNlcyJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7Ozs7QUFDQTs7QUFDQTs7OztBQUNBOzs7Ozs7QUFDQTtBQUNBO0FBQ0EsSUFBTUEsU0FBU0Msa0JBQVFDLE1BQVIsRUFBZjs7QUFHQTs7QUFFQUYsT0FBT0csR0FBUCxDQUFXLFVBQVgsRUFBdUIsVUFBQ0MsT0FBRCxFQUFVQyxRQUFWLEVBQXVCO0FBQzVDO0FBQ0EsTUFBTUMsT0FBT0MsMEJBQWdCQyxxQkFBaEIsRUFBYjtBQUNBSCxXQUFTSSxNQUFULENBQWdCLEdBQWhCLEVBQXFCQyxJQUFyQixDQUEwQkosSUFBMUI7QUFDRCxDQUpEOztBQU1BTixPQUFPRyxHQUFQLENBQVcsb0JBQVgsRUFBaUMsVUFBQ0MsT0FBRCxFQUFV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QUFoQixFQUFxQkMsSUFBckIsQ0FBMEJKLElBQTFCLENBQVA7QUFDRCxDQXZCRDs7a0JBeUJlTixNIiwiZmlsZSI6ImFwaS5qcyIsInNvdXJjZVJvb3QiOiJDOi9Vc2Vycy9YdHJlbXJ1bGVzL0Rlc2t0b3AvbWJhbmVsc29uaWZlYW55aS5naXRodWIuaW8vc2VydmVyL3JvdXRlcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBleHByZXNzIGZyb20gJ2V4cHJlc3MnO1xyXG5pbXBvcnQgeyBjaGVjaywgdmFsaWRhdGlvblJlc3VsdCB9IGZyb20gJ2V4cHJlc3MtdmFsaWRhdG9yL2NoZWNrJztcclxuaW1wb3J0IHNlbmRJdFJlc291cmNlcyBmcm9tICcuLi9jb250cm9sbGVyL3NlbmRJdFJlc291cmNlczEnO1xyXG5pbXBvcnQgc2VuZEl0UmVzb3VyY2VzQXJyYXkgZnJvbSAnLi4vY29udHJvbGxlci9zZW5kSXRSZXNvdXJjZXNBcnJheSc7XHJcbi8vIGNvbnN0IHNpciA9IG5ldyBzZW5kSXRSZXNvdXJjZXMoKVxyXG4vLyAgSW5zdGFudGlhdGluZ1xyXG5jb25zdCByb3V0ZXIgPSBleHByZXNzLlJvdXRlcigpO1xyXG5cclxuXHJcbi8qICBUaGVzZSBhcmUgQVBJIHJvdXRlcy4gKi9cclxuXHJcbnJvdXRlci5nZXQoJy9wYXJjZWxzJywgKHJlcXVlc3QsIHJlc3BvbnNlKSA9PiB7XHJcbiAgLy8gY29uc29sZS5sb2codGhpcylcclxuICBjb25zdCBkYXRhID0gc2VuZEl0UmVzb3VyY2VzLmdldEFsbFNlbmRJdFJlc291cmNlcygpXHJcbiAgcmVzcG9uc2Uuc3RhdHVzKDIwMCkuanNvbihkYXRhKTtcclxufSlcclxuXHJcbnJvdXRlci5nZXQoJy9wYXJjZWxzLzpwYXJjZWxJZCcsIChyZXF1ZXN0LCByZXNwb25zZSkgPT4ge1xyXG4gIGNvbnN0IHBhcmNlbElkID0gcGFyc2VJbnQocmVxdWVzdC5wYXJhbXMucGFyY2VsSWQsIDEwKTtcclxuICBjb25zdCBkYXRhID0gc2VuZEl0UmVzb3VyY2VzLmdldFNwZWNpZmljU2VuZEl0UmVzb3VyY2VCeVBhcmNlbElkKHBhcmNlbElkKTtcclxuICBpZiAoZGF0YS5sZW5ndGggPT09IDApIHtcclxuICAgIHJldHVybiByZXNwb25zZS5zdGF0dXMoNDA0KS5qc29uKHtcclxuICAgICAgc3VjY2VzczogZmFsc2UsXHJcbiAgICAgIGVycm9yOiAnWW91ciBQYXJjZWwgaXMgbm90IGZvdW5kISdcclxuICAgIH0pO1xyXG4gIH1cclxuICByZXR1cm4gcmVzcG9uc2Uuc3RhdHVzKDIwMCkuanNvbihkYXRhKTtcclxufSk7XHJcblxyXG5yb3V0ZXIuZ2V0KCcvdXNlcnMvOnVzZXJJZC9wYXJjZWxzJywgKHJlcXVlc3QsIHJlc3BvbnNlKSA9PiB7XHJcbiAgY29uc3QgdXNlcklkID0gcGFyc2VJbnQocmVxdWVzdC5wYXJhbXMudXNlcklkLCAxMCk7XHJcbiAgY29uc3QgZGF0YSA9IHNlbmRJdFJlc291cmNlcy5nZXRTcGVjaWZpY1NlbmRJdFJlc291cmNlQnlVc2VySWQodXNlcklkKTtcclxuICBpZiAoZGF0YS5sZW5ndGggPT09IDApIHtcclxuICAgIHJldHVybiByZXNwb25zZS5zdGF0dXMoNDA0KS5qc29uKHtcclxuICAgICAgc3VjY2VzczogZmFsc2UsXHJcbiAgICAgIGVycm9yOiAnVXNlciBoYXMgbm8gcGFyY2VscycsXHJcbiAgICB9KVxyXG4gIH1cclxuICByZXR1cm4gcmVzcG9uc2Uuc3RhdHVzKDIwMCkuanNvbihkYXRhKTtcclxufSlcclxuXHJcbnJvdXRlci5kZWxldGUoJy9wYXJjZWxzLzpwYXJjZWxJZCcsIChyZXF1ZXN0LCByZXNwb25zZSkgPT4ge1xyXG4gIGNvbnN0IHBhcmNlbElkID0gcGFyc2VJbnQocmVxdWVzdC5wYXJhbXMucGFyY2VsSWQsIDEwKVxyXG4gIGNvbnN0IG9iaiA9IHNlbmRJdFJlc291cmNlc0FycmF5LmZpbmQoc2VuZEl0UmVzb3VyY2UgPT4gc2VuZEl0UmVzb3VyY2UucGFyY2VsSWQgPT09IHBhcmNlbElkKTtcclxuICAvLyBjb25zb2xlLmxvZyhzZW5kSXRSZXNvdXJjZXNBcnJheSlcclxuICBjb25zdCBkYXRhID0gc2VuZEl0UmVzb3VyY2VzLmRlbGV0ZVNwZWNpZmljU2VuZEl0UmVzb3VyY2VCeVBhcmNlbElkKHBhcmNlbElkKVxyXG4gIGlmICghb2JqKSB7XHJcbiAgICByZXR1cm4gcmVzcG9uc2Uuc3RhdHVzKDQwNCkuanNvbih7XHJcbiAgICAgIHN1Y2Nlc3M6IGZhbHNlLFxyXG4gICAgICBlcnJvcjogJ1RoZSBvcmRlciB5b3UgYXJlIHRyeWluZyB0byBkZWxldGUgZG9lcyBub3QgZXhpc3QsIHBsZWFzZSBjaGVjayB0aGUgcGFyY2VsIGlkIGFuZCB0cnkgYWdhaW4nXHJcbiAgICB9KVxyXG4gIH1cclxuICByZXR1cm4gcmVzcG9uc2Uuc3RhdHVzKDIwMCkuanNvbihkYXRhKVxyXG59KVxyXG5cclxucm91dGVyLnB1dCgnL3BhcmNlbHMvOnBhcmNlbElkLzpjYW5jZWxsZWQnLCAocmVxdWVzdCwgcmVzcG9uc2UpID0+IHtcclxuICAvLyBjb25zdCBwYXJjZWxJZCA9IHBhcnNlSW50KHJlcXVlc3QucGFyYW1zLnBhcmNlbElkLCAxMClcclxuICAvLyBjb25zdCBjYW5jZWxsZWQgPSByZXF1ZXN0LmJvZHkuY2FuY2VsbGVkXHJcbiAgY29uc3QgeyBwYXJjZWxJZCwgY2FuY2VsbGVkIH0gPSB7XHJcbiAgICBwYXJjZWxJZDogcGFyc2VJbnQocmVxdWVzdC5wYXJhbXMucGFyY2VsSWQsIDEwKSxcclxuICAgIGNhbmNlbGxlZDogcmVxdWVzdC5ib2R5LmNhbmNlbGxlZFxyXG4gIH07XHJcbiAgLy8gY29uc3QgcmVzdWx0ID0gc2VuZEl0UmVzb3VyY2VzLmdldFNwZWNpZmljU2VuZEl0UmVzb3VyY2VCeVBhcmNlbElkKHBhcmNlbElkKTtcclxuICBjb25zdCBkYXRhID0gc2VuZEl0UmVzb3VyY2VzLmNhbmNlbFNlbmRJdFJlc291cmNlKHBhcmNlbElkLCBjYW5jZWxsZWQpO1xyXG4gIC8vIGNvbnNvbGUubG9nKHNlbmRJdFJlc291cmNlcy5jYW5jZWxTZW5kSXRSZXNvdXJjZSgxLCAnc29tZXRoaW5nJykpO1xyXG4gIGlmIChkYXRhLmxlbmd0aCA9PT0gMCkge1xyXG4gICAgcmV0dXJuIHJlc3BvbnNlLnN0YXR1cyg0MDQpLmpzb24oe1xyXG4gICAgICBzdWNjZXNzOiBmYWxzZSxcclxuICAgICAgZXJyb3I6ICdObyBQYXJjZWxzLCBZb3UgY2FuIGNyZWF0ZSBvbmUnLFxyXG4gICAgfSlcclxuICB9XHJcbiAgcmV0dXJuIHJlc3BvbnNlLnN0YXR1cygyMDApLmpzb24oZGF0YSk7XHJcbn0pXHJcblxyXG5yb3V0ZXIucG9zdCgnL3BhcmNlbHMnLCBbXHJcbiAgY2hlY2soJ3VzZXJOYW1lJykuaXNMZW5ndGgoeyBtaW46IDEgfSkud2l0aE1lc3NhZ2UoJ1VzZXJuYW1lIGNhbm5vdCBiZSBlbXB0eScpLFxyXG4gIGNoZWNrKCd1c2VyRW1haWwnKS5pc0xlbmd0aCh7IG1pbjogMSB9KS53aXRoTWVzc2FnZSgnVXNlckVtYWlsIGNhbm5vdCBiZSBibGFuaycpLFxyXG4gIGNoZWNrKCdwYXJjZWxOYW1lJykuaXNMZW5ndGgoeyBtaW46IDEgfSkud2l0aE1lc3NhZ2UoJ1BhcmNlbCBuYW1lIGNhbm5vdCBiZSBibGFuaycpLFxyXG5dLCAocmVxdWVzdCwgcmVzcG9uc2UpID0+IHtcclxuICBjb25zdCBlcnJvcnMgPSB2YWxpZGF0aW9uUmVzdWx0KHJlcXVlc3QpXHJcbiAgaWYgKCFlcnJvcnMuaXNFbXB0eSgpKSB7XHJcbiAgICByZXR1cm4gcmVzcG9uc2Uuc3RhdHVzKDQwMCkuanNvbih7XHJcbiAgICAgIHN1Y2Nlc3M6IGZhbHNlLFxyXG4gICAgICBlcnJvcjogJ1NvbWUgY3JlZGVudGlhbCBhcmUgYmxhbmsnLFxyXG4gICAgICBlcnJvcnM6IGVycm9ycy5hcnJheSgpLFxyXG4gICAgfSlcclxuICB9XHJcbiAgLy8gY29uc3QgdXNlck5hbWUgPSByZXF1ZXN0LmJvZHkudXNlck5hbWU7XHJcbiAgLy8gY29uc3QgdXNlckVtYWlsID0gcmVxdWVzdC5ib2R5LnVzZXJFbWFpbDtcclxuICAvLyBjb25zdCBwYXJjZWxOYW1lID0gcmVxdWVzdC5ib2R5LnBhcmNlbE5hbWU7XHJcbiAgY29uc3QgeyB1c2VyRW1haWwsIHVzZXJOYW1lLCBwYXJjZWxOYW1lIH0gPSB7XHJcbiAgICB1c2VyRW1haWw6IHJlcXVlc3QuYm9keS51c2VyRW1haWwsXHJcbiAgICB1c2VyTmFtZTogcmVxdWVzdC5ib2R5LnVzZXJOYW1lLFxyXG4gICAgcGFyY2VsTmFtZTogcmVxdWVzdC5ib2R5LnBhcmNlbE5hbWVcclxuICB9XHJcbiAgY29uc3QgZGF0YSA9IHNlbmRJdFJlc291cmNlcy5hZGRUb1NlbmRJdFJlc291cmNlcyh1c2VyTmFtZSwgdXNlckVtYWlsLCBwYXJjZWxOYW1lKVxyXG4gIHJldHVybiByZXNwb25zZS5zdGF0dXMoMjAxKS5qc29uKGRhdGEpXHJcbn0pXHJcblxyXG5leHBvcnQgZGVmYXVsdCByb3V0ZXJcclxuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "api.js"
+      ],
+      "names": [
+        "router",
+        "express",
+        "Router",
+        "get",
+        "request",
+        "response",
+        "data",
+        "sendItResources",
+        "getAllSendItResources",
+        "status",
+        "json",
+        "parcelId",
+        "parseInt",
+        "params",
+        "getSpecificSendItResourceByParcelId",
+        "length",
+        "success",
+        "error",
+        "userId",
+        "getSpecificSendItResourceByUserId",
+        "delete",
+        "obj",
+        "sendItResourcesArray",
+        "find",
+        "sendItResource",
+        "deleteSpecificSendItResourceByParcelId",
+        "put",
+        "cancelled",
+        "body",
+        "cancelSendItResource",
+        "post",
+        "isLength",
+        "min",
+        "withMessage",
+        "errors",
+        "isEmpty",
+        "array",
+        "userEmail",
+        "userName",
+        "parcelName",
+        "addToSendItResources"
+      ],
+      "mappings": "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",
+      "file": "api.js",
+      "sourceRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes",
+      "sourcesContent": [
+        "import express from 'express';\r\nimport { check, validationResult } from 'express-validator/check';\r\nimport sendItResources from '../controller/sendItResources1';\r\nimport sendItResourcesArray from '../controller/sendItResourcesArray';\r\n// const sir = new sendItResources()\r\n//  Instantiating\r\nconst router = express.Router();\r\n\r\n\r\n/*  These are API routes. */\r\n\r\nrouter.get('/parcels', (request, response) => {\r\n  // console.log(this)\r\n  const data = sendItResources.getAllSendItResources()\r\n  response.status(200).json(data);\r\n})\r\n\r\nrouter.get('/parcels/:parcelId', (request, response) => {\r\n  const parcelId = parseInt(request.params.parcelId, 10);\r\n  const data = sendItResources.getSpecificSendItResourceByParcelId(parcelId);\r\n  if (data.length === 0) {\r\n    return response.status(404).json({\r\n      success: false,\r\n      error: 'Your Parcel is not found!'\r\n    });\r\n  }\r\n  return response.status(200).json(data);\r\n});\r\n\r\nrouter.get('/users/:userId/parcels', (request, response) => {\r\n  const userId = parseInt(request.params.userId, 10);\r\n  const data = sendItResources.getSpecificSendItResourceByUserId(userId);\r\n  if (data.length === 0) {\r\n    return response.status(404).json({\r\n      success: false,\r\n      error: 'User has no parcels',\r\n    })\r\n  }\r\n  return response.status(200).json(data);\r\n})\r\n\r\nrouter.delete('/parcels/:parcelId', (request, response) => {\r\n  const parcelId = parseInt(request.params.parcelId, 10)\r\n  const obj = sendItResourcesArray.find(sendItResource => sendItResource.parcelId === parcelId);\r\n  // console.log(sendItResourcesArray)\r\n  const data = sendItResources.deleteSpecificSendItResourceByParcelId(parcelId)\r\n  if (!obj) {\r\n    return response.status(404).json({\r\n      success: false,\r\n      error: 'The order you are trying to delete does not exist, please check the parcel id and try again'\r\n    })\r\n  }\r\n  return response.status(200).json(data)\r\n})\r\n\r\nrouter.put('/parcels/:parcelId/:cancelled', (request, response) => {\r\n  // const parcelId = parseInt(request.params.parcelId, 10)\r\n  // const cancelled = request.body.cancelled\r\n  const { parcelId, cancelled } = {\r\n    parcelId: parseInt(request.params.parcelId, 10),\r\n    cancelled: request.body.cancelled\r\n  };\r\n  // const result = sendItResources.getSpecificSendItResourceByParcelId(parcelId);\r\n  const data = sendItResources.cancelSendItResource(parcelId, cancelled);\r\n  // console.log(sendItResources.cancelSendItResource(1, 'something'));\r\n  if (data.length === 0) {\r\n    return response.status(404).json({\r\n      success: false,\r\n      error: 'No Parcels, You can create one',\r\n    })\r\n  }\r\n  return response.status(200).json(data);\r\n})\r\n\r\nrouter.post('/parcels', [\r\n  check('userName').isLength({ min: 1 }).withMessage('Username cannot be empty'),\r\n  check('userEmail').isLength({ min: 1 }).withMessage('UserEmail cannot be blank'),\r\n  check('parcelName').isLength({ min: 1 }).withMessage('Parcel name cannot be blank'),\r\n], (request, response) => {\r\n  const errors = validationResult(request)\r\n  if (!errors.isEmpty()) {\r\n    return response.status(400).json({\r\n      success: false,\r\n      error: 'Some credential are blank',\r\n      errors: errors.array(),\r\n    })\r\n  }\r\n  // const userName = request.body.userName;\r\n  // const userEmail = request.body.userEmail;\r\n  // const parcelName = request.body.parcelName;\r\n  const { userEmail, userName, parcelName } = {\r\n    userEmail: request.body.userEmail,\r\n    userName: request.body.userName,\r\n    parcelName: request.body.parcelName\r\n  }\r\n  const data = sendItResources.addToSendItResources(userName, userEmail, parcelName)\r\n  return response.status(201).json(data)\r\n})\r\n\r\nexport default router\r\n"
+      ]
+    },
+    "mtime": 1542975335785
+  },
+  "{\"filename\":\"C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller/sendItResources1.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "createClass",
+        "classCallCheck",
+        "toConsumableArray",
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "./sendItResourcesArray",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "sendItResourcesArray"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [
+            "SendITResources"
+          ],
+          "specifiers": [
+            {
+              "kind": "local",
+              "local": "SendITResources",
+              "exported": "default"
+            }
+          ]
+        }
+      }
+    },
+    "options": {
+      "filename": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller/sendItResources1.js",
+      "filenameRelative": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller/sendItResources1.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "sendItResources1.js",
+      "sourceFileName": "sendItResources1.js",
+      "sourceRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "sendItResources1"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _sendItResourcesArray = require('./sendItResourcesArray');\n\nvar _sendItResourcesArray2 = _interopRequireDefault(_sendItResourcesArray);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar SendITResources = function () {\n  function SendITResources() {\n    _classCallCheck(this, SendITResources);\n  }\n\n  _createClass(SendITResources, null, [{\n    key: 'addToSendItResources',\n    value: function addToSendItResources(userName, userEmail, parcelName) {\n      return [{ userName: userName, userEmail: userEmail, parcelName: parcelName }].concat(_toConsumableArray(_sendItResourcesArray2.default));\n    }\n  }, {\n    key: 'getSpecificSendItResourceByUserId',\n    value: function getSpecificSendItResourceByUserId(userId) {\n      return _sendItResourcesArray2.default.filter(function (sendItResource) {\n        return sendItResource.userId === userId;\n      });\n    }\n  }, {\n    key: 'getSpecificSendItResourceByParcelId',\n    value: function getSpecificSendItResourceByParcelId(parcelId) {\n      return _sendItResourcesArray2.default.filter(function (sendItResource) {\n        return sendItResource.parcelId === parcelId;\n      });\n    }\n  }, {\n    key: 'deleteSpecificSendItResourceByParcelId',\n    value: function deleteSpecificSendItResourceByParcelId(parcelId) {\n      // console.log(this);\n      return _sendItResourcesArray2.default.filter(function (sendItResource) {\n        return sendItResource.parcelId !== parcelId;\n      });\n    }\n  }, {\n    key: 'getAllSendItResources',\n    value: function getAllSendItResources() {\n      console.log(this.prototype.i + 2017);\n      return _sendItResourcesArray2.default;\n    }\n\n    // static cancelSendItResource(parcelId, cancelled) {\n    //   const obj = sendItResourcesArray.find(sendItResource => sendItResource.parcelId === parcelId);\n    //   console.log(obj);\n    //   if (obj) {\n    //     return sendItResourcesArray = [{\n    //       name: obj.name,\n    //       email: obj.email,\n    //       cancelled,\n    //       userId: obj.userId,\n    //       parcelId\n    //     }, ...sendItResourcesArray]\n    //       .filter(sendItResource => sendItResource.parcelId === parcelId && sendItResource.cancelled === true)\n    //   }\n    // }\n\n    // static cancelSendItResouce(parcelId, cancelled) {\n    //   return sendItResourcesArray.map(sendItResource => sendItResource.parcelId === parcelId ? { ...sendItResource, cancelled } : sendItResource)\n    // }\n\n  }]);\n\n  return SendITResources;\n}();\n\nexports.default = SendITResources;\n\nundefined.prototype.i = 1;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlbmRJdFJlc291cmNlczEuanMiXSwibmFtZXMiOlsiU2VuZElUUmVzb3VyY2VzIiwidXNlck5hbWUiLCJ1c2VyRW1haWwiLCJwYXJjZWxOYW1lIiwic2VuZEl0UmVzb3VyY2VzQXJyYXkiLCJ1c2VySWQiLCJmaWx0ZXIiLCJzZW5kSXRSZXNvdXJjZSIsInBhcmNlbElkIiwiY29uc29sZSIsImxvZyIsInByb3RvdHlwZSIsImkiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQUE7Ozs7Ozs7Ozs7SUFDcUJBLGU7Ozs7Ozs7eUNBQ1NDLFEsRUFBVUMsUyxFQUFXQyxVLEVBQVk7QUFDM0QsY0FBUSxFQUFFRixrQkFBRixFQUFZQyxvQkFBWixFQUF1QkMsc0JBQXZCLEVBQVIsNEJBQWdEQyw4QkFBaEQ7QUFDRDs7O3NEQUV3Q0MsTSxFQUFRO0FBQy9DLGFBQU9ELCtCQUFxQkUsTUFBckIsQ0FBNEI7QUFBQSxlQUFrQkMsZUFBZUYsTUFBZixLQUEwQkEsTUFBNUM7QUFBQSxPQUE1QixDQUFQO0FBQ0Q7Ozt3REFFMENHLFEsRUFBVTtBQUNuRCxhQUFPSiwrQkFBcUJFLE1BQXJCLENBQTRCO0FBQUEsZUFBa0JDLGVBQWVDLFFBQWYsS0FBNEJBLFFBQTlDO0FBQUEsT0FBNUIsQ0FBUDtBQUNEOzs7MkRBRTZDQSxRLEVBQVU7QUFDdEQ7QUFDQSxhQUFPSiwrQkFBcUJFLE1BQXJCLENBQTRCO0FBQUEsZUFBa0JDLGVBQWVDLFFBQWYsS0FBNEJBLFFBQTlDO0FBQUEsT0FBNUIsQ0FBUDtBQUNEOzs7NENBRThCO0FBQzdCQyxjQUFRQyxHQUFSLENBQVksS0FBS0MsU0FBTCxDQUFlQyxDQUFmLEdBQW1CLElBQS9CO0FBQ0EsYUFBT1IsOEJBQVA7QUFDRDs7QUFFRDtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0E7QUFDQTs7Ozs7OztrQkF4Q21CSixlOztBQTBDckIsVUFBS1csU0FBTCxDQUFlQyxDQUFmLEdBQW1CLENBQW5CIiwiZmlsZSI6InNlbmRJdFJlc291cmNlczEuanMiLCJzb3VyY2VSb290IjoiQzovVXNlcnMvWHRyZW1ydWxlcy9EZXNrdG9wL21iYW5lbHNvbmlmZWFueWkuZ2l0aHViLmlvL3NlcnZlci9jb250cm9sbGVyIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHNlbmRJdFJlc291cmNlc0FycmF5IGZyb20gJy4vc2VuZEl0UmVzb3VyY2VzQXJyYXknO1xyXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBTZW5kSVRSZXNvdXJjZXMge1xyXG4gIHN0YXRpYyBhZGRUb1NlbmRJdFJlc291cmNlcyh1c2VyTmFtZSwgdXNlckVtYWlsLCBwYXJjZWxOYW1lKSB7XHJcbiAgICByZXR1cm4gW3sgdXNlck5hbWUsIHVzZXJFbWFpbCwgcGFyY2VsTmFtZSB9LCAuLi5zZW5kSXRSZXNvdXJjZXNBcnJheV07XHJcbiAgfVxyXG5cclxuICBzdGF0aWMgZ2V0U3BlY2lmaWNTZW5kSXRSZXNvdXJjZUJ5VXNlcklkKHVzZXJJZCkge1xyXG4gICAgcmV0dXJuIHNlbmRJdFJlc291cmNlc0FycmF5LmZpbHRlcihzZW5kSXRSZXNvdXJjZSA9PiBzZW5kSXRSZXNvdXJjZS51c2VySWQgPT09IHVzZXJJZCk7XHJcbiAgfVxyXG5cclxuICBzdGF0aWMgZ2V0U3BlY2lmaWNTZW5kSXRSZXNvdXJjZUJ5UGFyY2VsSWQocGFyY2VsSWQpIHtcclxuICAgIHJldHVybiBzZW5kSXRSZXNvdXJjZXNBcnJheS5maWx0ZXIoc2VuZEl0UmVzb3VyY2UgPT4gc2VuZEl0UmVzb3VyY2UucGFyY2VsSWQgPT09IHBhcmNlbElkKTtcclxuICB9XHJcblxyXG4gIHN0YXRpYyBkZWxldGVTcGVjaWZpY1NlbmRJdFJlc291cmNlQnlQYXJjZWxJZChwYXJjZWxJZCkge1xyXG4gICAgLy8gY29uc29sZS5sb2codGhpcyk7XHJcbiAgICByZXR1cm4gc2VuZEl0UmVzb3VyY2VzQXJyYXkuZmlsdGVyKHNlbmRJdFJlc291cmNlID0+IHNlbmRJdFJlc291cmNlLnBhcmNlbElkICE9PSBwYXJjZWxJZCk7XHJcbiAgfVxyXG5cclxuICBzdGF0aWMgZ2V0QWxsU2VuZEl0UmVzb3VyY2VzKCkge1xyXG4gICAgY29uc29sZS5sb2codGhpcy5wcm90b3R5cGUuaSArIDIwMTcpO1xyXG4gICAgcmV0dXJuIHNlbmRJdFJlc291cmNlc0FycmF5O1xyXG4gIH1cclxuXHJcbiAgLy8gc3RhdGljIGNhbmNlbFNlbmRJdFJlc291cmNlKHBhcmNlbElkLCBjYW5jZWxsZWQpIHtcclxuICAvLyAgIGNvbnN0IG9iaiA9IHNlbmRJdFJlc291cmNlc0FycmF5LmZpbmQoc2VuZEl0UmVzb3VyY2UgPT4gc2VuZEl0UmVzb3VyY2UucGFyY2VsSWQgPT09IHBhcmNlbElkKTtcclxuICAvLyAgIGNvbnNvbGUubG9nKG9iaik7XHJcbiAgLy8gICBpZiAob2JqKSB7XHJcbiAgLy8gICAgIHJldHVybiBzZW5kSXRSZXNvdXJjZXNBcnJheSA9IFt7XHJcbiAgLy8gICAgICAgbmFtZTogb2JqLm5hbWUsXHJcbiAgLy8gICAgICAgZW1haWw6IG9iai5lbWFpbCxcclxuICAvLyAgICAgICBjYW5jZWxsZWQsXHJcbiAgLy8gICAgICAgdXNlcklkOiBvYmoudXNlcklkLFxyXG4gIC8vICAgICAgIHBhcmNlbElkXHJcbiAgLy8gICAgIH0sIC4uLnNlbmRJdFJlc291cmNlc0FycmF5XVxyXG4gIC8vICAgICAgIC5maWx0ZXIoc2VuZEl0UmVzb3VyY2UgPT4gc2VuZEl0UmVzb3VyY2UucGFyY2VsSWQgPT09IHBhcmNlbElkICYmIHNlbmRJdFJlc291cmNlLmNhbmNlbGxlZCA9PT0gdHJ1ZSlcclxuICAvLyAgIH1cclxuICAvLyB9XHJcblxyXG4gIC8vIHN0YXRpYyBjYW5jZWxTZW5kSXRSZXNvdWNlKHBhcmNlbElkLCBjYW5jZWxsZWQpIHtcclxuICAvLyAgIHJldHVybiBzZW5kSXRSZXNvdXJjZXNBcnJheS5tYXAoc2VuZEl0UmVzb3VyY2UgPT4gc2VuZEl0UmVzb3VyY2UucGFyY2VsSWQgPT09IHBhcmNlbElkID8geyAuLi5zZW5kSXRSZXNvdXJjZSwgY2FuY2VsbGVkIH0gOiBzZW5kSXRSZXNvdXJjZSlcclxuICAvLyB9XHJcbn1cclxudGhpcy5wcm90b3R5cGUuaSA9IDE7XHJcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "sendItResources1.js"
+      ],
+      "names": [
+        "SendITResources",
+        "userName",
+        "userEmail",
+        "parcelName",
+        "sendItResourcesArray",
+        "userId",
+        "filter",
+        "sendItResource",
+        "parcelId",
+        "console",
+        "log",
+        "prototype",
+        "i"
+      ],
+      "mappings": ";;;;;;;;AAAA;;;;;;;;;;IACqBA,e;;;;;;;yCACSC,Q,EAAUC,S,EAAWC,U,EAAY;AAC3D,cAAQ,EAAEF,kBAAF,EAAYC,oBAAZ,EAAuBC,sBAAvB,EAAR,4BAAgDC,8BAAhD;AACD;;;sDAEwCC,M,EAAQ;AAC/C,aAAOD,+BAAqBE,MAArB,CAA4B;AAAA,eAAkBC,eAAeF,MAAf,KAA0BA,MAA5C;AAAA,OAA5B,CAAP;AACD;;;wDAE0CG,Q,EAAU;AACnD,aAAOJ,+BAAqBE,MAArB,CAA4B;AAAA,eAAkBC,eAAeC,QAAf,KAA4BA,QAA9C;AAAA,OAA5B,CAAP;AACD;;;2DAE6CA,Q,EAAU;AACtD;AACA,aAAOJ,+BAAqBE,MAArB,CAA4B;AAAA,eAAkBC,eAAeC,QAAf,KAA4BA,QAA9C;AAAA,OAA5B,CAAP;AACD;;;4CAE8B;AAC7BC,cAAQC,GAAR,CAAY,KAAKC,SAAL,CAAeC,CAAf,GAAmB,IAA/B;AACA,aAAOR,8BAAP;AACD;;AAED;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;;;;;;;kBAxCmBJ,e;;AA0CrB,UAAKW,SAAL,CAAeC,CAAf,GAAmB,CAAnB",
+      "file": "sendItResources1.js",
+      "sourceRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller",
+      "sourcesContent": [
+        "import sendItResourcesArray from './sendItResourcesArray';\r\nexport default class SendITResources {\r\n  static addToSendItResources(userName, userEmail, parcelName) {\r\n    return [{ userName, userEmail, parcelName }, ...sendItResourcesArray];\r\n  }\r\n\r\n  static getSpecificSendItResourceByUserId(userId) {\r\n    return sendItResourcesArray.filter(sendItResource => sendItResource.userId === userId);\r\n  }\r\n\r\n  static getSpecificSendItResourceByParcelId(parcelId) {\r\n    return sendItResourcesArray.filter(sendItResource => sendItResource.parcelId === parcelId);\r\n  }\r\n\r\n  static deleteSpecificSendItResourceByParcelId(parcelId) {\r\n    // console.log(this);\r\n    return sendItResourcesArray.filter(sendItResource => sendItResource.parcelId !== parcelId);\r\n  }\r\n\r\n  static getAllSendItResources() {\r\n    console.log(this.prototype.i + 2017);\r\n    return sendItResourcesArray;\r\n  }\r\n\r\n  // static cancelSendItResource(parcelId, cancelled) {\r\n  //   const obj = sendItResourcesArray.find(sendItResource => sendItResource.parcelId === parcelId);\r\n  //   console.log(obj);\r\n  //   if (obj) {\r\n  //     return sendItResourcesArray = [{\r\n  //       name: obj.name,\r\n  //       email: obj.email,\r\n  //       cancelled,\r\n  //       userId: obj.userId,\r\n  //       parcelId\r\n  //     }, ...sendItResourcesArray]\r\n  //       .filter(sendItResource => sendItResource.parcelId === parcelId && sendItResource.cancelled === true)\r\n  //   }\r\n  // }\r\n\r\n  // static cancelSendItResouce(parcelId, cancelled) {\r\n  //   return sendItResourcesArray.map(sendItResource => sendItResource.parcelId === parcelId ? { ...sendItResource, cancelled } : sendItResource)\r\n  // }\r\n}\r\nthis.prototype.i = 1;\r\n"
+      ]
+    },
+    "mtime": 1542976125175
+  },
+  "{\"filename\":\"C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller/sendItResourcesArray.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller/sendItResourcesArray.js",
+      "filenameRelative": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller/sendItResourcesArray.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "sendItResourcesArray.js",
+      "sourceFileName": "sendItResourcesArray.js",
+      "sourceRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "sendItResourcesArray"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar sendItResourcesArray = [{ name: 'mba nelson ifeanni', email: 'time', cancelled: false, userId: 1, parcelId: 1 }, { name: 'something1', email: 'time1', cancelled: false, userId: 2, parcelId: 2 }, { name: 'mba nelson ifeanyi12345', email: 'time2', cancelled: false, userId: 3, parcelId: 3 }, { name: 'something', email: 'time', cancelled: true, userId: 1, parcelId: 4 }];\n\nexports.default = sendItResourcesArray;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlbmRJdFJlc291cmNlc0FycmF5LmpzIl0sIm5hbWVzIjpbInNlbmRJdFJlc291cmNlc0FycmF5IiwibmFtZSIsImVtYWlsIiwiY2FuY2VsbGVkIiwidXNlcklkIiwicGFyY2VsSWQiXSwibWFwcGluZ3MiOiI7Ozs7O0FBQUEsSUFBTUEsdUJBQXVCLENBQUMsRUFBRUMsTUFBTSxvQkFBUixFQUE4QkMsT0FBTyxNQUFyQyxFQUE2Q0MsV0FBVyxLQUF4RCxFQUErREMsUUFBUSxDQUF2RSxFQUEwRUMsVUFBVSxDQUFwRixFQUFELEVBQzNCLEVBQUVKLE1BQU0sWUFBUixFQUFzQkMsT0FBTyxPQUE3QixFQUFzQ0MsV0FBVyxLQUFqRCxFQUF3REMsUUFBUSxDQUFoRSxFQUFtRUMsVUFBVSxDQUE3RSxFQUQyQixFQUUzQixFQUFFSixNQUFNLHlCQUFSLEVBQW1DQyxPQUFPLE9BQTFDLEVBQW1EQyxXQUFXLEtBQTlELEVBQXFFQyxRQUFRLENBQTdFLEVBQWdGQyxVQUFVLENBQTFGLEVBRjJCLEVBRzNCLEVBQUVKLE1BQU0sV0FBUixFQUFxQkMsT0FBTyxNQUE1QixFQUFvQ0MsV0FBVyxJQUEvQyxFQUFxREMsUUFBUSxDQUE3RCxFQUFnRUMsVUFBVSxDQUExRSxFQUgyQixDQUE3Qjs7a0JBTWVMLG9CIiwiZmlsZSI6InNlbmRJdFJlc291cmNlc0FycmF5LmpzIiwic291cmNlUm9vdCI6IkM6L1VzZXJzL1h0cmVtcnVsZXMvRGVza3RvcC9tYmFuZWxzb25pZmVhbnlpLmdpdGh1Yi5pby9zZXJ2ZXIvY29udHJvbGxlciIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IHNlbmRJdFJlc291cmNlc0FycmF5ID0gW3sgbmFtZTogJ21iYSBuZWxzb24gaWZlYW5uaScsIGVtYWlsOiAndGltZScsIGNhbmNlbGxlZDogZmFsc2UsIHVzZXJJZDogMSwgcGFyY2VsSWQ6IDEgfSxcclxuICB7IG5hbWU6ICdzb21ldGhpbmcxJywgZW1haWw6ICd0aW1lMScsIGNhbmNlbGxlZDogZmFsc2UsIHVzZXJJZDogMiwgcGFyY2VsSWQ6IDIgfSxcclxuICB7IG5hbWU6ICdtYmEgbmVsc29uIGlmZWFueWkxMjM0NScsIGVtYWlsOiAndGltZTInLCBjYW5jZWxsZWQ6IGZhbHNlLCB1c2VySWQ6IDMsIHBhcmNlbElkOiAzIH0sXHJcbiAgeyBuYW1lOiAnc29tZXRoaW5nJywgZW1haWw6ICd0aW1lJywgY2FuY2VsbGVkOiB0cnVlLCB1c2VySWQ6IDEsIHBhcmNlbElkOiA0IH1cclxuXTtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IHNlbmRJdFJlc291cmNlc0FycmF5O1xyXG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "sendItResourcesArray.js"
+      ],
+      "names": [
+        "sendItResourcesArray",
+        "name",
+        "email",
+        "cancelled",
+        "userId",
+        "parcelId"
+      ],
+      "mappings": ";;;;;AAAA,IAAMA,uBAAuB,CAAC,EAAEC,MAAM,oBAAR,EAA8BC,OAAO,MAArC,EAA6CC,WAAW,KAAxD,EAA+DC,QAAQ,CAAvE,EAA0EC,UAAU,CAApF,EAAD,EAC3B,EAAEJ,MAAM,YAAR,EAAsBC,OAAO,OAA7B,EAAsCC,WAAW,KAAjD,EAAwDC,QAAQ,CAAhE,EAAmEC,UAAU,CAA7E,EAD2B,EAE3B,EAAEJ,MAAM,yBAAR,EAAmCC,OAAO,OAA1C,EAAmDC,WAAW,KAA9D,EAAqEC,QAAQ,CAA7E,EAAgFC,UAAU,CAA1F,EAF2B,EAG3B,EAAEJ,MAAM,WAAR,EAAqBC,OAAO,MAA5B,EAAoCC,WAAW,IAA/C,EAAqDC,QAAQ,CAA7D,EAAgEC,UAAU,CAA1E,EAH2B,CAA7B;;kBAMeL,oB",
+      "file": "sendItResourcesArray.js",
+      "sourceRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/controller",
+      "sourcesContent": [
+        "const sendItResourcesArray = [{ name: 'mba nelson ifeanni', email: 'time', cancelled: false, userId: 1, parcelId: 1 },\r\n  { name: 'something1', email: 'time1', cancelled: false, userId: 2, parcelId: 2 },\r\n  { name: 'mba nelson ifeanyi12345', email: 'time2', cancelled: false, userId: 3, parcelId: 3 },\r\n  { name: 'something', email: 'time', cancelled: true, userId: 1, parcelId: 4 }\r\n];\r\n\r\nexport default sendItResourcesArray;\r\n"
+      ]
+    },
+    "mtime": 1542972049702
+  },
+  "{\"filename\":\"C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes/index.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          },
+          {
+            "source": "../controller/sendItResources1",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "sendItResources"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes/index.js",
+      "filenameRelative": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _express = require('express');\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _sendItResources = require('../controller/sendItResources1');\n\nvar _sendItResources2 = _interopRequireDefault(_sendItResources);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// Instantiating\nvar router = _express2.default.Router();\n\nrouter.get('/', function (request, response) {\n  var data = _sendItResources2.default.getAllSendItResources();\n  console.log(data);\n  response.send(data);\n});\n\nexports.default = router;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbInJvdXRlciIsImV4cHJlc3MiLCJSb3V0ZXIiLCJnZXQiLCJyZXF1ZXN0IiwicmVzcG9uc2UiLCJkYXRhIiwic2VuZEl0UmVzb3VyY2VzIiwiZ2V0QWxsU2VuZEl0UmVzb3VyY2VzIiwiY29uc29sZSIsImxvZyIsInNlbmQiXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBOzs7O0FBQ0E7Ozs7OztBQUdBO0FBQ0EsSUFBTUEsU0FBU0Msa0JBQVFDLE1BQVIsRUFBZjs7QUFFQUYsT0FBT0csR0FBUCxDQUFXLEdBQVgsRUFBZ0IsVUFBQ0MsT0FBRCxFQUFVQyxRQUFWLEVBQXVCO0FBQ3JDLE1BQU1DLE9BQU9DLDBCQUFnQkMscUJBQWhCLEVBQWI7QUFDQUMsVUFBUUMsR0FBUixDQUFZSixJQUFaO0FBQ0FELFdBQVNNLElBQVQsQ0FBY0wsSUFBZDtBQUNELENBSkQ7O2tCQU1lTixNIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlUm9vdCI6IkM6L1VzZXJzL1h0cmVtcnVsZXMvRGVza3RvcC9tYmFuZWxzb25pZmVhbnlpLmdpdGh1Yi5pby9zZXJ2ZXIvcm91dGVzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGV4cHJlc3MgZnJvbSAnZXhwcmVzcydcclxuaW1wb3J0IHNlbmRJdFJlc291cmNlcyBmcm9tICcuLi9jb250cm9sbGVyL3NlbmRJdFJlc291cmNlczEnXHJcblxyXG5cclxuLy8gSW5zdGFudGlhdGluZ1xyXG5jb25zdCByb3V0ZXIgPSBleHByZXNzLlJvdXRlcigpXHJcblxyXG5yb3V0ZXIuZ2V0KCcvJywgKHJlcXVlc3QsIHJlc3BvbnNlKSA9PiB7XHJcbiAgY29uc3QgZGF0YSA9IHNlbmRJdFJlc291cmNlcy5nZXRBbGxTZW5kSXRSZXNvdXJjZXMoKVxyXG4gIGNvbnNvbGUubG9nKGRhdGEpXHJcbiAgcmVzcG9uc2Uuc2VuZChkYXRhKVxyXG59KVxyXG5cclxuZXhwb3J0IGRlZmF1bHQgcm91dGVyXHJcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "router",
+        "express",
+        "Router",
+        "get",
+        "request",
+        "response",
+        "data",
+        "sendItResources",
+        "getAllSendItResources",
+        "console",
+        "log",
+        "send"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;;;AAGA;AACA,IAAMA,SAASC,kBAAQC,MAAR,EAAf;;AAEAF,OAAOG,GAAP,CAAW,GAAX,EAAgB,UAACC,OAAD,EAAUC,QAAV,EAAuB;AACrC,MAAMC,OAAOC,0BAAgBC,qBAAhB,EAAb;AACAC,UAAQC,GAAR,CAAYJ,IAAZ;AACAD,WAASM,IAAT,CAAcL,IAAd;AACD,CAJD;;kBAMeN,M",
+      "file": "index.js",
+      "sourceRoot": "C:/Users/Xtremrules/Desktop/mbanelsonifeanyi.github.io/server/routes",
+      "sourcesContent": [
+        "import express from 'express'\r\nimport sendItResources from '../controller/sendItResources1'\r\n\r\n\r\n// Instantiating\r\nconst router = express.Router()\r\n\r\nrouter.get('/', (request, response) => {\r\n  const data = sendItResources.getAllSendItResources()\r\n  console.log(data)\r\n  response.send(data)\r\n})\r\n\r\nexport default router\r\n"
+      ]
+    },
+    "mtime": 1542722969430
+  }
+}

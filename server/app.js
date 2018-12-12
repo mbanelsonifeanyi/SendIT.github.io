@@ -1,24 +1,25 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-// import { parseForESLint } from 'babel-eslint';
-
-// import routes
-import api from './routes/api';
-import index from './routes/index';
+import morgan from 'morgan';
+import allowCrossOriginAccess from '../allowCrossOriginAccess';
+import api from '../api/routes/api';
+import index from '../api/routes/index';
+import user from '../api/routes/user';
+import errorHandlerObject from '../middlewares/errorHandler';
 
 
 const app = express();
-// const { parseForESLint } = { parseForESLint: parseForESLint() };
+const port = process.env.PORT;
 
-
+app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.parseForESLint());
-// app.use(bodyParser.json());
+app.use('/api/v1', api);
+app.use('/api/v1', user);
 app.use('/', index);
-app.use('/api', api);
+app.use(allowCrossOriginAccess);
+app.use(errorHandlerObject.allErrorsHandlerFunction);
+app.use(errorHandlerObject.allErrorsHandlerMessageFunction);
 
-const port = process.env.PORT || 3000
 
-app.listen(port, () => console.log(`Listening On Port ${port}...`))
-
-export default app
+app.listen(port, () => console.log(`Listening On Port ${port}...`));
+export default app;
