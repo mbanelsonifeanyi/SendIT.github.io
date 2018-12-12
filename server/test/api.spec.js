@@ -1,6 +1,6 @@
 import { describe, it } from 'mocha';
 import request from 'supertest';
-import app from '../app';
+import app from '';
 
 describe('SendItREsources', () => {
   describe('addToSendItResources1234567890', () => {

@@ -48,6 +48,7 @@ body{
 }
 .page-main-container{
     padding: 0 15px;
+<<<<<<< HEAD
     max-width: 90%;
     max-height: calc( 100vh - 190px );
     background-repeat: no-repeat;
@@ -56,13 +57,28 @@ body{
 .page-footer{
     color: rgba(247, 173, 14);
     bottom: 0;
+=======
+    min-width: 90%;
+    min-height: calc( 100vh - 190px );
+    background-image: url(../images/rsz_homehead.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+.page-footer{
+    color: rgba(247, 173, 14);
+    bottom: 0; 
+>>>>>>> 6bbb06d420f213424080717a05b7fb6c128eaab9
     position: absolute;
     background-color: rgba(0, 0, 0, .87);
     text-align: center;
     overflow: hidden;
 }
 .page-main-container #page-header-image {
+<<<<<<< HEAD
     width: auto;
+=======
+    width: auto
+>>>>>>> 6bbb06d420f213424080717a05b7fb6c128eaab9
 }
 .page-body-signup-form-div{
     background-color:   rgba(78, 77, 77, 0.875);
@@ -74,9 +90,13 @@ body{
 .page-main-container-dashboard{
     background-color: black;
     display: grid;
+<<<<<<< HEAD
     grid-template-columns: 3fr 8fr;
     /* height: calc( (calc( 100vh - 190px ))/ 3  ); */
     height: 100px;
+=======
+    grid-template-columns: 3fr 8fr
+>>>>>>> 6bbb06d420f213424080717a05b7fb6c128eaab9
 }
 
 .page-main-container-dashboard-sidebar{
