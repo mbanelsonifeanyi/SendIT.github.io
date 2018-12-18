@@ -43,6 +43,5 @@ debug.log
 # System Files
 *._*
 .nyc_output
-gitignore
 Thumbs.db
 desktop.ini
