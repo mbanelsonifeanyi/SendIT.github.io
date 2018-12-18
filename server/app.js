@@ -11,7 +11,9 @@ import errorHandlerObject from '../middlewares/errorHandler';
 const app = express();
 const port = process.env.PORT;
 
+
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api/v1', api);
 app.use('/api/v1', user);

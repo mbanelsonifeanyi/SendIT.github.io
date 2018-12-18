@@ -1,0 +1,8 @@
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCptqSLNX2daETYY9X5r3zWJSYC38Bug0O3pb8bPrsxpXe+wv46xok3g2FHf7fKadN3u2rFN/tyn3PIyxm2rgxLbKJP+S6DI67GM2dgSTEb/k8F/PUE1B4uL/cJ0elkDS78PFqxaZ4pbZHXeABWBuRZWDfngc44jkmhmemcwO/8XCW58+yrOBoYA+wtbWYtQ1x+0TKJTzd/jTyebyhRloCwgbRE0KUak6kBqAv1XURASUJ2MSRWYdPTe8qrernD2s+HRPzYy+jLX1ekDYtp689pMP0yq/NsfHcimntmrLUJ0+ftQx68Xj1SzczSP5VEZSerjVOEhOmn36TeSDeexL0f Xtremrules@OLELEWE
+
+IPv4 address:	192.168.42.15
+IPv4 DNS Servers:	192.168.42.129
+Manufacturer:	Microsoft
+Description:	Remote NDIS based Internet Sharing Device
+Driver version:	10.0.15063.0
+Physical address (MAC):	?6E-6B-90-9E-92-AA

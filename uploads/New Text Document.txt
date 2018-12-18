@@ -1,0 +1,10 @@
+https://dzone.com/articles/crud-operation-with-angular-5-http-client-and-aspn
+https://www.sitepoint.com/angular-rxjs-create-api-service-rest-backend/
+https://www.youtube.com/watch?v=2jd0gG0V8kI
+https://www.youtube.com/watch?v=oDuc2V-iX3I
+https://www.youtube.com/watch?v=lELVpyP1rDg
+https://www.youtube.com/watch?v=1fr0EsqEe5U
+https://www.youtube.com/watch?v=dwU0dtLnMnE
+https://www.youtube.com/watch?v=yCm9Ng0bbEQ
+https://www.youtube.com/watch?v=ddCwDQs1kCQ
+https://www.youtube.com/watch?v=RF9GlQwY5y8

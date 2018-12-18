@@ -26,37 +26,39 @@ const client = new Client();
 const Og2 = {
   deleteSpecificSendItResourceByParcelIdRoute: (request, response) => {
     const parcelId = parseInt(request.params.parcelId, 10);
-      client.connect().catch(error => {
-        return response
-        .status(500)
-        .json('Oops! Server is down! Try again later');
-      })
-      .then(() => {
-        const sql = 'SELECT FROM senditresources WHERE parcelid=$1';
-        const params = [parcelId];
-        return client.query(sql, params);
-      }).catch(error => {
-        return response
-        .status(500)
-        .json(`Oops ${parcelId}`);
-      })
-      .then((result) => {
-        console.log(result.rows);
-        const data = result.rows.lenght;
-        console.log(data);
-        if ((result.rows.lenght) !== 0) {
-        const sql = 'DELETE FROM senditresources WHERE parcelid=$1';
-        const params = [parcelId];
-        return client.query(sql, params);
-        }
-        return response.status(404).json(`the parcel id ${parcelId} is not found`);
-    })
-      .catch(error => {
-        console.log(error);
-        return response.status(500).json(`${parcelId} is ........`);
-      }).then(() => {
-        return response.status(200).json(`Parcel ${parcelId} has been deleted`);
+    client.connect()
+    .catch(error => {
+      console.log(`On conect ${error}`);
+      return response.status(500).json({
+        status: 500,
+        message: 'The server is down'
       });
+    })
+    .then(() => {
+      const sql = 'DELETE FROM senditresources WHERE parcelid=$1';
+      const params = [parcelId];
+      return client.query(sql, params);
+    })
+    .catch(error => {
+      console.log(`After Query: ${error}`);
+      return response.status(500).json({
+        status: 500,
+        message: 'the server is down'
+      });
+    })
+    .then(result => {
+      if (result.rowCount !== 0) {
+        return response.status(200).json({
+          status: 200,
+          message: `Parcel ${parcelId} has been deleted`
+        });
+      }
+      return response.status(404).json({
+        status: 404,
+        message: `Parcel ${parcelId} is not Found, Check the parcel id and try again`
+      });
+    })
+    .catch(error => console.log(`After Result: ${ error }`));
     }
 };
 export default Og2;
